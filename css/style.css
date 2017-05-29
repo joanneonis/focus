@@ -14,7 +14,7 @@ body {
   color: #686868;
   border: none; }
   .btn-primary {
-    background: red;
+    background: #4991FF;
     color: white; }
   .btn-circle {
     width: 50px;
@@ -32,7 +32,7 @@ body {
   background-color: #fafafa; }
 
 h1 {
-  color: red;
+  color: #4991FF;
   font-weight: 400; }
 
 .timeline {
@@ -95,7 +95,7 @@ div.active {
 strong {
   font-size: 1.2em;
   font-weight: 500;
-  color: red; }
+  color: #4991FF; }
 
 .cards {
   float: left;
@@ -136,14 +136,14 @@ h2 {
 
 label {
   margin: 10px 5px;
-  color: red;
+  color: #4991FF;
   font-weight: 400;
   display: inline-block;
   width: 100%; }
 
 input, textarea {
   background: rgba(216, 233, 255, 0.18);
-  border: 2px solid rgba(255, 0, 0, 0.18);
+  border: 2px solid rgba(73, 145, 255, 0.18);
   font-size: 1em;
   color: #686868;
   height: 50px;
@@ -154,7 +154,7 @@ input, textarea {
   min-width: 60%; }
   input:focus, textarea:focus {
     outline: none;
-    border: 2px solid red; }
+    border: 2px solid #4991FF; }
 
 textarea {
   height: auto;

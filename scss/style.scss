@@ -1,0 +1,206 @@
+$brand-font: 'Ubuntu', sans-serif;
+$brand-primary: #4991FF;
+$brand-secondary: #D8E9FF;
+
+$brand-gray-light: #D2D8DB;
+$brand-gray-dark: #686868;
+body{
+  font-family: $brand-font;
+  font-weight: 300;
+  color: $brand-gray-dark;
+}
+
+*{box-sizing: border-box;}
+
+.btn{
+  background: $brand-gray-light;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 7px 12px;
+  color: $brand-gray-dark;
+  border: none;
+  
+  &-primary{
+    background: $brand-primary;
+    color: white;
+  }
+  &-circle{
+    width: 50px;
+    height: 50px;
+    line-height: 37px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+
+#container {
+  position: absolute;
+  bottom: 100px;
+  left:0;
+  right:0;
+  top:0;
+  background-color: #fafafa;
+}
+
+h1{
+  color: $brand-primary;
+  font-weight: 400;
+}
+
+.timeline{
+  background: #ccc;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height: 100px;
+  
+  #sliderdot{
+    position: fixed;
+    background:white;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    bottom: 25px;
+    left:20px;
+    z-index: 10;
+    cursor: pointer;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+} 
+ 
+.algemeen,.afsprong,.keerpunt, .vluchtfase1, .vluchtfase2, .comment{
+  opacity:0;
+  position: absolute;
+  width: 100%;
+}
+
+.algemeen{
+  padding: 8vh;
+}
+.algemeen-container{
+  position: relative;
+  float: left;
+  width: 70%;
+  height: calc(100vh - 100px);
+  
+  h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 4em;
+    font-size: 4em;
+  }
+}
+  
+circle, text{
+  opacity:0;
+  transition: all 1s;
+}
+
+div.active{
+  opacity:1;
+  
+  circle, text{
+    opacity: 1;
+  }
+}
+
+::selection{
+  background:none;
+}
+
+.timeline{
+  padding: 0px 20px;
+  background-color: $brand-secondary;
+}
+
+strong{
+  font-size: 1.2em;
+  font-weight: 500;
+  color:$brand-primary;
+}
+
+.cards{
+  float: left;
+  width: 30%;
+  padding: 0;
+  
+  .card{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    display: block;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.stripes{
+    height: 22px;
+    width: 2px;
+    background: $brand-gray-dark;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+  
+  &:before{
+    content: "";
+    @extend .stripes;
+    top:0;
+    left: 8px;
+  }
+  &:after{
+    content: "";
+    @extend .stripes;
+    top:0;
+    left: 16px;
+  }
+}
+
+.bovenbeen1,.bovenbeen2,.shoulder1,.shoulder2,.hand1,.hand2,.onderbeen1,.onderbeen2{
+  display:none;
+}
+
+h2{
+  font-weight: 100;
+  color: $brand-gray-dark;
+  font-size: 2em;
+}
+
+.comment{
+  padding: 30px;
+}
+
+label{
+  margin: 10px 5px;
+  color: $brand-primary;
+  font-weight: 400;
+  display: inline-block;
+  width: 100%;
+}
+
+input{
+  background:rgba($brand-secondary, .18);
+  border: 2px solid rgba($brand-primary, .18);
+  font-size: 1em;
+  color: $brand-gray-dark;
+  height: 50px;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-weight: 100;
+  font-family: $brand-font;
+  min-width: 60%;
+  
+  &:focus{
+    outline: none;
+    border: 2px solid $brand-primary;
+  }
+}
+
+textarea{
+  @extend input;
+  height: auto;
+  width: 100%;
+  border-radius: 30px;
+}

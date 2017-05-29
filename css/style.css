@@ -19,9 +19,9 @@ body {
   .btn-circle {
     width: 50px;
     height: 50px;
-    line-height: 37px;
-    font-size: 1.2em;
-    text-align: center; }
+    text-align: center;
+    margin: 0 35%;
+    display: block; }
 
 #container {
   position: absolute;
@@ -30,6 +30,26 @@ body {
   right: 0;
   top: 0;
   background-color: #fafafa; }
+
+#inloggen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+  #inloggen #logocontainer {
+    float: left;
+    margin-right: 5.5vw;
+    margin-left: 5.5vw; }
+    #inloggen #logocontainer .logo {
+      width: 23vw; }
+  #inloggen #inlogformulier {
+    float: left; }
+    #inloggen #inlogformulier input, #inloggen #inlogformulier textarea {
+      width: 35vw; }
+
+.arrow {
+  width: 50%; }
 
 h1 {
   color: #4991FF;
@@ -136,6 +156,7 @@ h2 {
 
 label {
   margin: 10px 5px;
+  text-align: left;
   color: #4991FF;
   font-weight: 400;
   display: inline-block;
@@ -143,10 +164,10 @@ label {
 
 input, textarea {
   background: rgba(216, 233, 255, 0.18);
-  border: 2px solid rgba(73, 145, 255, 0.18);
+  border: 3px solid rgba(73, 145, 255, 0.18);
   font-size: 1em;
   color: #686868;
-  height: 50px;
+  height: 60px;
   border-radius: 30px;
   padding: 5px 15px;
   font-weight: 100;
@@ -155,6 +176,8 @@ input, textarea {
   input:focus, textarea:focus {
     outline: none;
     border: 2px solid #4991FF; }
+  input::selection, textarea::selection {
+    background: rgba(73, 145, 255, 0.28); }
 
 textarea {
   height: auto;

@@ -22,6 +22,33 @@ body {
     text-align: center;
     margin: 0 35%;
     display: block; }
+  .btn-centered {
+    margin: 0 auto; }
+  .btn-bigger {
+    width: 60px;
+    height: 60px; }
+
+.cirkel {
+  background: white;
+  border-radius: 200px;
+  display: inline-block;
+  padding: 7px 12px;
+  border: 2px solid #D8E9FF;
+  width: 16.6vw;
+  height: 16.6vw;
+  line-height: 16.6vw;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 10%;
+  float: left; }
+  .cirkel-filled {
+    background: #D8E9FF; }
+  .cirkel .faseicoon {
+    width: 90%;
+    max-height: 100%;
+    display: inline-block; }
+    .cirkel .faseicoon-first {
+      padding: 8%; }
 
 #container {
   position: absolute;
@@ -30,6 +57,11 @@ body {
   right: 0;
   top: 0;
   background-color: #fafafa; }
+
+#wrapper {
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 4%; }
 
 #inloggen {
   position: absolute;
@@ -49,7 +81,35 @@ body {
       width: 35vw; }
 
 .arrow {
-  width: 50%; }
+  width: 48%; }
+
+#titel {
+  width: 80%;
+  float: left; }
+
+#profielicoon {
+  width: 20%;
+  height: 100px;
+  text-align: right;
+  float: right;
+  clear: right; }
+
+#fasen {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15%;
+  margin-bottom: 4%; }
+
+.ondertitel {
+  text-align: center;
+  color: #4991FF;
+  font-size: 1.6em; }
+
+.circleholder {
+  margin-right: 2%; }
+  .circleholder-last {
+    margin-right: 0; }
 
 h1 {
   color: #4991FF;
@@ -148,8 +208,16 @@ strong {
 
 h2 {
   font-weight: 100;
+  color: #53556F;
+  font-size: 2.5em;
+  margin-bottom: 0;
+  margin-top: 0; }
+
+h3 {
+  font-weight: 100;
   color: #686868;
-  font-size: 2em; }
+  font-size: 1.1em;
+  margin-top: 10px; }
 
 .comment {
   padding: 30px; }

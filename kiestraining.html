@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Focus | Kies training</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#fase_alles').addClass('cirkel-filled');
+
+            $('#fase_alles').click(function() {
+                $(this).toggleClass('cirkel-filled');
+
+                if($('#fase_afsprong').hasClass('cirkel-filled')) {
+                    $('#fase_afsprong').removeClass('cirkel-filled');
+                }
+                
+                if($('#fase_vlucht').hasClass('cirkel-filled')) {
+                    $('#fase_vlucht').removeClass('cirkel-filled');
+                }
+                
+                if($('#fase_keerpunt').hasClass('cirkel-filled')) {
+                    $('#fase_keerpunt').removeClass('cirkel-filled');
+                }
+            });
+
+            $('#fase_afsprong').click(function() {
+                $(this).toggleClass('cirkel-filled')
+
+                if($('#fase_alles').hasClass('cirkel-filled')) {
+                    $('#fase_alles').removeClass('cirkel-filled');
+                }
+            });
+
+            $('#fase_vlucht').click(function() {
+                $(this).toggleClass('cirkel-filled')
+
+                if($('#fase_alles').hasClass('cirkel-filled')) {
+                    $('#fase_alles').removeClass('cirkel-filled');
+                }
+            });
+
+            $('#fase_keerpunt').click(function() {
+                $(this).toggleClass('cirkel-filled')
+
+                if($('#fase_alles').hasClass('cirkel-filled')) {
+                    $('#fase_alles').removeClass('cirkel-filled');
+                }
+            });
+ 
+         });
+    </script>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+	<script src="https://use.fontawesome.com/e363af3dc0.js"></script>
+
+        <div id="wrapper">
+            <div id="titel">
+                <h2>Kies trainingsfase</h2>
+                <h3>Kies een of meerdere fasen die je wilt trainen.</h3>
+            </div>
+
+            <div id="profielicoon">
+                Ranomi Kromowidjojo<br>
+                <a href="index.html">Uitloggen</a>
+            </div>
+
+            <div id="fasen">
+                <div class="circleholder">
+                    <div class="cirkel" id="fase_alles"><img src="assets/img/alle_fasen.svg" class="faseicoon faseicoon-first"></div>
+                    <div class="ondertitel">Alle fasen</div>
+                </div>
+                <div class="circleholder">
+                    <div class="cirkel" id="fase_afsprong"><img src="assets/img/afsprong.svg" class="faseicoon"></div>
+                    <div class="ondertitel">Afsprong</div>
+                </div>
+                <div class="circleholder">
+                    <div class="cirkel" id="fase_vlucht"><img src="assets/img/vluchtfase.svg" class="faseicoon"></div>
+                    <div class="ondertitel">Vluchtfase</div>
+                </div>
+                <div class="circleholder circleholder-last">
+                    <div class="cirkel" id="fase_keerpunt"><img src="assets/img/keerpunt.svg" class="faseicoon"></div>
+                    <div class="ondertitel">Keerpunt</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary btn-circle btn-centered btn-bigger" onclick="location.href='resultaten_algemeen.html'">
+                <img src="assets/img/arrow.svg" class="arrow">
+            </button>
+        </div>
+</body>
+</html>

@@ -4,7 +4,7 @@ $brand-secondary: #D8E9FF;
 
 $brand-gray-light: #D2D8DB;
 $brand-gray-dark: #686868;
-
+$brand-gray-darker: #53556F;
 
 body{
   font-family: $brand-font;
@@ -35,6 +35,44 @@ body{
     margin: 0 35%;
     display: block;
   }
+
+  &-centered {
+    margin:0 auto;
+  }
+
+  &-bigger {
+    width:60px;
+    height:60px;
+  }
+}
+
+.cirkel{
+  background: white;
+  border-radius: 200px;
+  display: inline-block;
+  padding: 7px 12px;
+  border: 2px solid $brand-secondary;
+  width: 16.6vw;
+  height: 16.6vw;
+  line-height: 16.6vw;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 10%;
+  float:left;
+
+  &-filled {
+    background: $brand-secondary;
+  }
+
+  .faseicoon {
+    width:90%;
+    max-height:100%;
+    display: inline-block;
+
+    &-first {
+      padding: 8%;
+    }
+  }
 }
 
 #container {
@@ -44,6 +82,12 @@ body{
   right:0;
   top:0;
   background-color: #fafafa;
+}
+
+#wrapper {
+  padding-left: 8%;
+  padding-right:8%;
+  padding-top: 4%;
 }
 
 #inloggen {
@@ -73,7 +117,42 @@ body{
 }
 
 .arrow {
-  width:50%;
+  width:48%;
+}
+
+#titel {
+  width:80%;
+  float:left;
+}
+
+#profielicoon {
+  width:20%;
+  height:100px;
+  text-align: right;
+  float:right;
+  clear: right;
+}
+
+#fasen {
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin-top:15%;
+  margin-bottom:4%;
+}
+
+.ondertitel {
+  text-align: center;
+  color: $brand-primary;
+  font-size: 1.6em;
+}
+
+.circleholder {
+  margin-right:2%;
+
+  &-last {
+    margin-right:0;
+  }
 }
 
 h1{
@@ -198,8 +277,17 @@ strong{
 
 h2{
   font-weight: 100;
+  color: $brand-gray-darker;
+  font-size: 2.5em;
+  margin-bottom:0;
+  margin-top:0;
+}
+
+h3{
+  font-weight: 100;
   color: $brand-gray-dark;
-  font-size: 2em;
+  font-size: 1.1em;
+  margin-top:10px;
 }
 
 .comment{

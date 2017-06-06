@@ -122,6 +122,8 @@ mc.on("panleft panright", function(ev) {
 
   var firstStop = 0.032*timelineWidth;
 
+  $('.tooltip').css("opacity","0");
+
 
   for (i = 0; i < points.length; i++) { 
       if( currentDeltaX >= ((timelineWidth - firstStop)/timelineSVGwidth)*(timelineSVGwidth/200*(points[i].meter))

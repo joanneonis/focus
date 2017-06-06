@@ -17,17 +17,36 @@ body {
   background: $brand-gray-light;
   border-radius: 50px;
   display: inline-block;
-  padding: 7px 12px;
+  padding: 12px 20px;
   color: $brand-gray-dark;
   border: none;
+  text-decoration: none;
+  font-weight: 400;
+  border: 2px solid $brand-gray-light;
+  transition: all .2s;
+
   &-primary {
     background: $brand-primary;
     color: white;
+    border-color: $brand-primary;
+
+    &:hover{
+      background-color: darken($brand-primary, 15%);
+      border-color: darken($brand-primary, 15%);
+    }
+  }
+  &-secondary{
+    background: none;
+    border-color: $brand-secondary;
+    color: $brand-gray-dark;
+
+    &:hover{
+      background-color: $brand-secondary;
+    }
   }
   &-circle {
     width: 50px;
-    height: 50px; //line-height: 37px;
-    //font-size: 1.2em;
+    height: 50px; 
     text-align: center;
     margin: 0 35%;
     display: block;
@@ -151,14 +170,15 @@ h1 {
   right: 0;
   bottom: 0;
   height: 9vw;
+
   #sliderdot {
     position: fixed;
     background: white;
     border-radius: 50px;
     width: 50px;
     height: 50px;
-    bottom: 25px;
-    left: 20px;
+    bottom: 35px;
+    left: 30px;
     z-index: 10;
     cursor: pointer;
     display: block;
@@ -252,7 +272,7 @@ text {
 }
 
 .timeline {
-  padding: 0px 20px;
+  padding: 0px 50px;
   background-color: $brand-secondary;
 }
 
@@ -290,7 +310,7 @@ strong {
     width: 45%;
     img {
       margin-top: -20px;
-      max-height: 180px;
+      max-height: 15vh;
       max-width: 100%;
     }
   }
@@ -346,7 +366,11 @@ h2 {
 }
 
 .comment {
-  padding: 30px;
+  padding: 6vh 5vw;
+
+  form{
+    margin: 4vh 0;
+  }
 }
 
 label {
@@ -359,8 +383,8 @@ label {
 }
 
 input {
-  background: rgba($brand-secondary, .18);
-  border: 3px solid rgba($brand-primary, .18);
+  background: rgba($brand-gray-light, .26);
+  border: 3px solid transparent;
   font-size: 1em;
   color: $brand-gray-dark;
   height: 60px;
@@ -372,6 +396,7 @@ input {
   &:focus {
     outline: none;
     border: 2px solid $brand-primary;
+    border-color: rgba($brand-primary, .18);
   }
   &::selection {
     background: rgba($brand-primary, .28);
@@ -390,4 +415,45 @@ textarea {
   position: fixed;
     top: 6vh;
     left: 5vw;
+}
+
+@-webkit-keyframes wiggle{
+  0%{transform: rotate(3deg);}
+  50%{transform: rotate(-7deg);}
+  100%{transform: rotate(3deg);}
+}
+
+.tooltip {
+    position: absolute;
+    margin-top: -55px;
+    background: rgba(0, 0, 0, 0.51);
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    width: 90px;
+    border-radius: 5px;
+    left: -20px;
+    transform-origin: center 150%;
+    -webkit-animation: wiggle .8s ease-in-out infinite;
+    transition: opacity .2s;
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 8px solid rgba(0, 0, 0, 0);
+      border-right: 8px solid rgba(0, 0, 0, 0);
+      border-top: 12px solid rgba(0, 0, 0, 0.51);
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
+}
+
+    
+.btn-group{
+  float: right;
+  margin-top: 20px;
 }

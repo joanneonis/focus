@@ -54,6 +54,12 @@ body {
   }
 }
 
+#inlog-links {
+  bottom: 5vw;
+  right: 5vw;
+  position: absolute;
+}
+
 .arrow {
   width: 110%;
 }
@@ -138,12 +144,16 @@ h2 {
   margin-top: 10px;
 }
 
-.comment {
+.comment, .register {
   padding: 6vh 5vw;
 
   form{
     margin: 4vh 0;
   }
+}
+
+.inline {
+  display:inline;
 }
 
 label {
@@ -154,6 +164,23 @@ label {
   display: inline-block;
   width: 100%;
 }
+
+.label-small {
+  @extend label;
+    min-width:20%;
+    width:30%;
+  }
+
+.label-normal {
+  @extend label;
+    width:60%;
+  }
+
+.label-fullwidth {
+  @extend label;
+    min-width:60%;
+    width:100%;
+  }
 
 input {
   background: rgba($brand-gray-light, .26);
@@ -166,6 +193,7 @@ input {
   font-weight: 100;
   font-family: $brand-font;
   min-width: 60%;
+
   &:focus {
     outline: none;
     border: 2px solid $brand-primary;
@@ -176,6 +204,18 @@ input {
     ;
   }
 }
+
+.input-small {
+  @extend input;
+    min-width:20%;
+    width:30%;
+  }
+
+.input-fullwidth {
+  @extend input;
+    min-width:60%;
+    width:100%;
+  }
 
 textarea {
   @extend input;

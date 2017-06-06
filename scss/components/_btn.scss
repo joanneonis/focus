@@ -23,6 +23,13 @@
       border-color: darken($brand-primary, 15%);
     }
   }
+
+  &-back {
+    background: white;
+    border-color: $brand-primary;
+    border:1px solid $brand-primary;
+  }
+
   &-secondary{
     background: none;
     border-color: $brand-secondary;
@@ -31,6 +38,13 @@
     &:hover{
       background-color: $brand-secondary;
     }
+
+    &-small {
+      font-size: 0.75em;
+      padding: 8px 15px;
+      margin-right:0.5vw;
+    }
+
   }
   &-circle {
     width: 50px;
@@ -45,6 +59,14 @@
   &-bigger {
     width: 60px;
     height: 60px;
+  }
+
+  &-backcircle {
+    width: 50px;
+    height: 50px; 
+    margin-right:1%;
+    text-align: center;
+    display: inline;
   }
 }
 

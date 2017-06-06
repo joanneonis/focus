@@ -62,7 +62,7 @@
   margin-bottom: 10%;
   float: left; }
   .cirkel-filled {
-    background: #D8E9FF; }
+    background: #f2f8ff; }
   .cirkel .faseicoon {
     width: 90%;
     max-height: 100%;
@@ -197,7 +197,7 @@ section.comment {
     transform: translate(-50%, -50%);
     text-align: center; }
   .algemeen-container h1 {
-    font-size: 7.1vw;
+    font-size: 7vw;
     margin: -0.4em 0 .2em 0;
     font-weight: 500; }
 
@@ -231,7 +231,8 @@ section.comment {
   float: left; }
 
 .score-container {
-  width: 30%;
+  width: 24%;
+  margin-right: 6%;
   float: left; }
 
 .dashboard-inner {
@@ -284,6 +285,10 @@ body {
 * {
   box-sizing: border-box; }
 
+a.small {
+  color: #53556F;
+  font-size: 0.8em; }
+
 #container {
   position: relative;
   height: calc(100vh - 9vw); }
@@ -307,8 +312,11 @@ body {
       width: 23vw; }
   #inloggen #inlogformulier {
     float: left; }
-    #inloggen #inlogformulier input, #inloggen #inlogformulier .input-small, #inloggen #inlogformulier .input-fullwidth, #inloggen #inlogformulier textarea {
+    #inloggen #inlogformulier input, #inloggen #inlogformulier .input-register, #inloggen #inlogformulier .input-small, #inloggen #inlogformulier textarea {
       width: 35vw; }
+
+#wwvergetenform {
+  margin-bottom: 4%; }
 
 #inlog-links {
   bottom: 5vw;
@@ -316,14 +324,32 @@ body {
   position: absolute; }
 
 .arrow {
-  width: 110%; }
+  width: 200%;
+  margin: 0 -2px; }
+  .arrow-back {
+    width: 140%;
+    margin: 0 -10px; }
+
+.naamholder, .iconholder {
+  float: right; }
+
+.iconholder {
+  margin-right: 3%; }
+
+.icon {
+  width: 20%; }
+
+.darktext {
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #222222; }
 
 #titel {
-  width: 80%;
+  width: 60%;
   float: left; }
 
 #profielicoon {
-  width: 20%;
+  width: 40%;
   height: 100px;
   text-align: right;
   float: right;
@@ -382,15 +408,40 @@ h2 {
   display: inline-block;
   margin-top: 10px; }
 
-.comment, .register {
+.comment {
   padding: 6vh 5vw; }
-  .comment form, .register form {
+  .comment form {
     margin: 4vh 0; }
+
+.add-photo {
+  height: 70vh;
+  width: 15%;
+  display: inline-block;
+  float: left; }
+
+.profilepicture {
+  width: 8vw; }
+
+.registreer-form {
+  float: left;
+  width: 80%;
+  display: inline-block; }
+
+.form-links {
+  width: 30%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  float: left; }
+
+.form-rechts {
+  width: 48%;
+  margin-bottom: 2%;
+  float: left; }
 
 .inline {
   display: inline; }
 
-label, .label-small, .label-normal, .label-fullwidth {
+label {
   margin: 10px 5px;
   text-align: left;
   color: #4991FF;
@@ -398,18 +449,7 @@ label, .label-small, .label-normal, .label-fullwidth {
   display: inline-block;
   width: 100%; }
 
-.label-small {
-  min-width: 20%;
-  width: 30%; }
-
-.label-normal {
-  width: 60%; }
-
-.label-fullwidth {
-  min-width: 60%;
-  width: 100%; }
-
-input, .input-small, .input-fullwidth, textarea {
+input, .input-register, .input-small, textarea {
   background: rgba(210, 216, 219, 0.26);
   border: 3px solid transparent;
   font-size: 1em;
@@ -420,25 +460,30 @@ input, .input-small, .input-fullwidth, textarea {
   font-weight: 100;
   font-family: "Ubuntu", sans-serif;
   min-width: 60%; }
-  input:focus, .input-small:focus, .input-fullwidth:focus, textarea:focus {
+  input:focus, .input-register:focus, .input-small:focus, textarea:focus {
     outline: none;
     border: 2px solid #4991FF;
     border-color: rgba(73, 145, 255, 0.18); }
-  input::selection, .input-small::selection, .input-fullwidth::selection, textarea::selection {
+  input::selection, .input-register::selection, .input-small::selection, textarea::selection {
     background: rgba(73, 145, 255, 0.28); }
 
-.input-small {
-  min-width: 20%;
-  width: 30%; }
-
-.input-fullwidth {
-  min-width: 60%;
+.input-register {
   width: 100%; }
+
+.input-small {
+  min-width: 50%; }
+
+#email.input-register {
+  width: 80%; }
 
 textarea {
   height: auto;
   width: 100%;
   border-radius: 30px; }
+
+.title {
+  width: 100%;
+  margin-bottom: 8vh; }
 
 .results-title {
   position: fixed;

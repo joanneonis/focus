@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Focus | Wachtwoord vergeten</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        function controleren(e) {
+            var gebruikersnaam = $('#gebruikersnaam').val(); 
+            var wachtwoord = $('#wachtwoord').val(); 
+            var voornaam = $('#voornaam').val(); 
+            var achternaam = $('#achternaam').val(); 
+            var email = $('#email').val(); 
+
+
+            if(gebruikersnaam == "" || wachtwoord == "" || voornaam == "" || achternaam == "" || email == ""){
+                        alert("Vul alle velden in om je te kunnen registreren");
+                        e.preventDefault();
+            } 
+        }
+
+        $(document).ready(function(){
+            $('#submit').click(controleren);
+        });
+    </script>
+</head>
+<body>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+	<script src="https://use.fontawesome.com/e363af3dc0.js"></script>
+    
+    <div id="wrapper">
+        <div class="title">
+            <button class="btn btn-back btn-backcircle" onclick="window.location='index.html';"><img src="assets/img/arrow-back.svg" class="arrow arrow-back"></button>
+            <h2 class="inline">Wachtwoord vergeten</h2><br><br>
+            <span class="subtitle">Vul je gebruikersnaam en wachtwoord in, en je kunt je wachtwoord opnieuw instellen</span>
+        </div>
+
+        <form action="index.html" method="post" id="wwvergetenform">
+            <label for="gebruikersnaam">Gebruikersnaam</label>
+            <input class="input-small" type="text" name="gebruikersnaam" id="gebruikersnaam"/>
+            <br><br>
+            <label for="emailadres">E-mailadres</label><br>
+            <input class="input-small" type="email" name="email" id="email">
+            <br><br>
+        </form>
+
+        <button class="btn btn-primary btn-circle btn-centered" onclick="location.href='index.html'">
+                <img src="assets/img/arrow.svg" class="arrow">
+        </button>
+    </div>
+</body>
+</html>

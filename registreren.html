@@ -11,28 +11,19 @@
         function controleren(e) {
             var gebruikersnaam = $('#gebruikersnaam').val(); 
             var wachtwoord = $('#wachtwoord').val(); 
+            var voornaam = $('#voornaam').val(); 
+            var achternaam = $('#achternaam').val(); 
+            var email = $('#email').val(); 
 
-            if(gebruikersnaam == "" && wachtwoord == ""){
-                        alert("Vul gebruikersnaam (demo) en wachtwoord (demo) in");
+
+            if(gebruikersnaam == "" || wachtwoord == "" || voornaam == "" || achternaam == "" || email == ""){
+                        alert("Vul alle velden in om je te kunnen registreren");
                         e.preventDefault();
-            } else if(gebruikersnaam == ""){
-                        alert("Vul gebruikersnaam in");
-                        e.preventDefault();
-            } else if(wachtwoord == ""){
-                        alert("Vul wachtwoord in");
-                        e.preventDefault();
-            } else if(gebruikersnaam !== "demo"){
-                        alert("Gebruik 'demo' als gebruikersnaam en wachtwoord");
-                        e.preventDefault();
-            } else if(wachtwoord !== "demo"){
-                        alert("Gebruik 'demo' als gebruikersnaam en wachtwoord");
-                        e.preventDefault();
-            }
-            
+            } 
         }
 
         $(document).ready(function(){
-            //$('button').click(controleren);
+            $('#submit').click(controleren);
         });
     </script>
 </head>
@@ -41,36 +32,46 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e363af3dc0.js"></script>
     
-    <div class="register">
-        <button class="btn btn-back btn-backcircle" onclick="window.location='index.html';"><img src="assets/img/arrow-back.svg" class="arrow"></button>
-        <h2 class="inline">Registreren</h2>
-
-        <div class="add-photo">
+    <div id="wrapper">
+        <div class="title">
+            <button class="btn btn-back btn-backcircle" onclick="window.location='index.html';"><img src="assets/img/arrow-back.svg" class="arrow arrow-back"></button>
+            <h2 class="inline">Registreren</h2>
         </div>
 
-        <div class="formulier">
-            <form action="kiestraining.html" method="post" id="inlogform">
-                <label for="gebruikersnaam">Gebruikersnaam</label>
-                <input class="input-small" type="text" name="gebruikersnaam" id="gebruikersnaam"/>
+        <div class="registreren">
+            <div class="add-photo">
+                <img src="assets/img/profilepicture.svg" class="profilepicture">
+            </div>
 
-                <!--<label for="wachtwoord">Wachtwoord</label><br>-->
-                <input class="input-normal" type="password" name="wachtwoord" id="wachtwoord">
-                <br><br>
-                <label for="voornaam" class="label-small">Voornaam</label><br>
-                <input class="input-small" type="text" name="voornaam" id="voornaam">
+            <div class="registreer-form">
+                <form action="index.html" method="post" id="registreerform">
 
-                <!--<label for="achternaam">Achternaam</label>-->
-                <input class="input-normal" type="text" name="achternaam" id="achternaam">
-                <br><br>
-                <label for="email">E-mailadres</label>
-                <input class="input-fullwidth" type="email" name="email" id="email">
+                    <div class="form-links">
+                        <label for="gebruikersnaam">Gebruikersnaam</label>
+                        <input class="input-register" type="text" name="gebruikersnaam" id="gebruikersnaam" tabindex=1/>
+                        <br><br>
+                        <label for="voornaam" class="label-small">Voornaam</label><br>
+                        <input class="input-register" type="text" name="voornaam" id="voornaam" tabindex=3>
+                    </div>
 
-                <br><br>
-                <button class="btn btn-primary btn-circle" type="submit" form="inlogform">
-                    <img src="assets/img/arrow.svg" class="arrow">
-                </button>
-            </form>
-    </div>
+                    <div class="form-rechts">
+                        <label for="wachtwoord">Wachtwoord</label><br>
+                        <input class="input-register" type="password" name="wachtwoord" id="wachtwoord" tabindex=2>
+                        <br><br>
+                        <label for="achternaam">Achternaam</label>
+                        <input class="input-register" type="text" name="achternaam" id="achternaam" tabindex=4>
+                    </div>
+                    
+                    <label for="email">E-mailadres</label>
+                    <input class="input-register" type="email" name="email" id="email" tabindex=5>
 
+                    <br><br>
+                    <button class="btn btn-primary btn-circle" type="submit" form="registreerform" id="submit">
+                        <img src="assets/img/arrow.svg" class="arrow">
+                    </button>
+
+                </form>
+            </div>
+        </div>
 </body>
 </html>

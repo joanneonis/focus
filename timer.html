@@ -87,9 +87,9 @@ function show() {
 }
 
 function update() {
-	$time.innerHTML = formatTime(x.time());
+	$time.innerHTML = formatTime(x.time())+'s';
 	
-	if(x.time() >= 10000){
+	if(x.time() >= 12250){
 		stop();
 		location.href='resultaten_algemeen.html';
 	}

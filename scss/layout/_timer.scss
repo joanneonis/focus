@@ -37,6 +37,7 @@
     h1{
         font-size: 8vmax;
         @include centralize();
+        font-weight: 500;
         margin: -10px 0 0 0;
     }
 }

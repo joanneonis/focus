@@ -62,7 +62,7 @@
   margin-bottom: 10%;
   float: left; }
   .cirkel-filled {
-    background: #D8E9FF; }
+    background: #f2f8ff; }
   .cirkel .faseicoon {
     width: 90%;
     max-height: 100%;
@@ -231,7 +231,8 @@ section.comment {
   float: left; }
 
 .score-container {
-  width: 30%;
+  width: 24%;
+  margin-right: 6%;
   float: left; }
 
 .dashboard-inner {
@@ -284,6 +285,10 @@ body {
 * {
   box-sizing: border-box; }
 
+a.small {
+  color: #53556F;
+  font-size: 0.8em; }
+
 #container {
   position: relative;
   height: calc(100vh - 9vw); }
@@ -319,14 +324,32 @@ body {
   position: absolute; }
 
 .arrow {
-  width: 110%; }
+  width: 200%;
+  margin: 0 -2px; }
+  .arrow-back {
+    width: 140%;
+    margin: 0 -10px; }
+
+.naamholder, .iconholder {
+  float: right; }
+
+.iconholder {
+  margin-right: 3%; }
+
+.icon {
+  width: 20%; }
+
+.darktext {
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #222222; }
 
 #titel {
-  width: 80%;
+  width: 60%;
   float: left; }
 
 #profielicoon {
-  width: 20%;
+  width: 40%;
   height: 100px;
   text-align: right;
   float: right;

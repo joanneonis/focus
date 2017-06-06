@@ -20,6 +20,10 @@ body {
   box-sizing: border-box;
 }
 
+a.small {
+  color: $brand-gray-darker;
+  font-size:0.8em;
+}
 
 #container {
   position: relative;
@@ -65,16 +69,40 @@ body {
 }
 
 .arrow {
-  width: 110%;
+  width: 200%;
+  margin: 0 -2px;
+
+  &-back {
+    width: 140%;
+    margin: 0 -10px;
+  }
+}
+
+.naamholder, .iconholder {
+  float:right;
+}
+
+.iconholder{
+  margin-right:3%;
+}
+
+.icon {
+  width:20%;
+}
+
+.darktext {
+  font-size:1.1em;
+  font-weight: 400;
+  color: $brand-black;
 }
 
 #titel {
-  width: 80%;
+  width: 60%;
   float: left;
 }
 
 #profielicoon {
-  width: 20%;
+  width: 40%;
   height: 100px;
   text-align: right;
   float: right;

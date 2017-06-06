@@ -1,7 +1,8 @@
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
-  color: #686868; }
+  color: #686868;
+  margin: 0; }
 
 * {
   box-sizing: border-box; }
@@ -24,12 +25,8 @@ body {
     text-align: center; }
 
 #container {
-  position: absolute;
-  bottom: 100px;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: #fafafa; }
+  position: relative;
+  height: calc(100vh - 9vw); }
 
 h1 {
   color: #4991FF;
@@ -41,7 +38,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 100px; }
+  height: 9vw; }
   .timeline #sliderdot {
     position: fixed;
     background: white;
@@ -58,7 +55,16 @@ h1 {
 .algemeen, .afsprong, .keerpunt, .vluchtfase1, .vluchtfase2, .comment {
   opacity: 0;
   position: absolute;
-  width: 100%; }
+  width: 100%;
+  top: 0;
+  bottom: 0; }
+  .algemeen svg, .afsprong svg, .keerpunt svg, .vluchtfase1 svg, .vluchtfase2 svg, .comment svg {
+    max-height: calc(100vh - 9vw);
+    max-width: 99vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
 
 .algemeen {
   padding: 8vh; }
@@ -67,14 +73,16 @@ h1 {
   position: relative;
   float: left;
   width: 70%;
-  height: calc(100vh - 100px); }
-  .algemeen-container h1 {
+  height: calc(100vh - 9vw - 16vh); }
+  .algemeen-container-inner {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 4em;
-    font-size: 4em; }
+    text-align: center; }
+  .algemeen-container h1 {
+    font-size: 4em;
+    margin: 0 0 .2em 0; }
 
 circle, text {
   opacity: 0;

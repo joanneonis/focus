@@ -1,15 +1,11 @@
-$brand-font: 'Ubuntu', sans-serif;
-$brand-primary: #4991FF;
-$brand-secondary: #D8E9FF;
 
-$brand-gray-light: #D2D8DB;
-$brand-gray-dark: #686868;
-
+@import "variabelen";
 
 body{
   font-family: $brand-font;
   font-weight: 300;
   color: $brand-gray-dark;
+  margin: 0;
 }
 
 *{box-sizing: border-box;}
@@ -18,7 +14,7 @@ body{
   background: $brand-gray-light;
   border-radius: 50px;
   display: inline-block;
-  padding: 7px 12px;
+  padding: 7px 12px; 
   color: $brand-gray-dark;
   border: none;
   
@@ -36,12 +32,8 @@ body{
 }
 
 #container {
-  position: absolute;
-  bottom: 100px;
-  left:0;
-  right:0;
-  top:0;
-  background-color: #fafafa;
+  position: relative;
+  height: calc(100vh - 9vw);
 }
 
 h1{
@@ -55,7 +47,7 @@ h1{
   left:0;
   right:0;
   bottom:0;
-  height: 100px;
+  height: 9vw;
   
   #sliderdot{
     position: fixed;
@@ -76,6 +68,18 @@ h1{
   opacity:0;
   position: absolute;
   width: 100%;
+  top:0;
+  bottom:0;
+
+  svg {
+      max-height: calc(100vh - 9vw);
+      max-width: 99vw;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); 
+  }
 }
 
 .algemeen{
@@ -85,15 +89,18 @@ h1{
   position: relative;
   float: left;
   width: 70%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 9vw - 16vh);
   
-  h1{
+  &-inner{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    height: 4em;
+    transform: translate(-50%, -50%);   
+    text-align: center; 
+  }
+  h1{
     font-size: 4em;
+    margin:0 0 .2em 0;
   }
 }
   
@@ -206,3 +213,4 @@ textarea{
   width: 100%;
   border-radius: 30px;
 }
+

@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 
 @import "variabelen";
+=======
+$brand-font: 'Ubuntu', sans-serif;
+$brand-primary: #4991FF;
+$brand-secondary: #D8E9FF;
+
+$brand-gray-light: #D2D8DB;
+$brand-gray-dark: #686868;
+$brand-gray-darker: #53556F;
+>>>>>>> 944e27cb5dc36dd4006c41e118c1f84236c2cc77
 
 body{
   font-family: $brand-font;
@@ -25,15 +35,126 @@ body{
   &-circle{
     width: 50px;
     height: 50px;
-    line-height: 37px;
-    font-size: 1.2em;
+    //line-height: 37px;
+    //font-size: 1.2em;
     text-align: center;
+    margin: 0 35%;
+    display: block;
+  }
+
+  &-centered {
+    margin:0 auto;
+  }
+
+  &-bigger {
+    width:60px;
+    height:60px;
+  }
+}
+
+.cirkel{
+  background: white;
+  border-radius: 200px;
+  display: inline-block;
+  padding: 7px 12px;
+  border: 2px solid $brand-secondary;
+  width: 16.6vw;
+  height: 16.6vw;
+  line-height: 16.6vw;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 10%;
+  float:left;
+
+  &-filled {
+    background: $brand-secondary;
+  }
+
+  .faseicoon {
+    width:90%;
+    max-height:100%;
+    display: inline-block;
+
+    &-first {
+      padding: 8%;
+    }
   }
 }
 
 #container {
   position: relative;
   height: calc(100vh - 9vw);
+}
+
+#wrapper {
+  padding-left: 8%;
+  padding-right:8%;
+  padding-top: 4%;
+}
+
+#inloggen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+    #logocontainer {
+    float:left;
+    margin-right: 5.5vw;
+    margin-left: 5.5vw;
+    
+      .logo {
+        width:23vw;
+      }
+    }
+
+  #inlogformulier {
+    float:left;
+    
+    input {
+      width:35vw;
+    }
+  }
+}
+
+.arrow {
+  width:48%;
+}
+
+#titel {
+  width:80%;
+  float:left;
+}
+
+#profielicoon {
+  width:20%;
+  height:100px;
+  text-align: right;
+  float:right;
+  clear: right;
+}
+
+#fasen {
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin-top:15%;
+  margin-bottom:4%;
+}
+
+.ondertitel {
+  text-align: center;
+  color: $brand-primary;
+  font-size: 1.6em;
+}
+
+.circleholder {
+  margin-right:2%;
+
+  &-last {
+    margin-right:0;
+  }
 }
 
 h1{
@@ -173,8 +294,17 @@ strong{
 
 h2{
   font-weight: 100;
+  color: $brand-gray-darker;
+  font-size: 2.5em;
+  margin-bottom:0;
+  margin-top:0;
+}
+
+h3{
+  font-weight: 100;
   color: $brand-gray-dark;
-  font-size: 2em;
+  font-size: 1.1em;
+  margin-top:10px;
 }
 
 .comment{
@@ -183,6 +313,7 @@ h2{
 
 label{
   margin: 10px 5px;
+  text-align: left;
   color: $brand-primary;
   font-weight: 400;
   display: inline-block;
@@ -191,10 +322,10 @@ label{
 
 input{
   background:rgba($brand-secondary, .18);
-  border: 2px solid rgba($brand-primary, .18);
+  border: 3px solid rgba($brand-primary, .18);
   font-size: 1em;
   color: $brand-gray-dark;
-  height: 50px;
+  height: 60px;
   border-radius: 30px;
   padding: 5px 15px;
   font-weight: 100;
@@ -205,6 +336,10 @@ input{
     outline: none;
     border: 2px solid $brand-primary;
   }
+
+  &::selection{
+  background:rgba($brand-primary, .28);;
+}
 }
 
 textarea{

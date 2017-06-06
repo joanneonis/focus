@@ -1,21 +1,29 @@
 var sliderdot = document.getElementById('sliderdot');
 var basis = $('.algemeen');
-var timelineWidth = $('#timeline-svg').outerWidth();
+var timelineWidth = $('#timeline-line').attr('width'); //$('#timeline-svg').outerWidth() 
 var timelineRelative = timelineWidth/200;
 var mc = new Hammer(sliderdot);
+
+var offsetLeft = $('#timeline-line').position().left;
+var timelineLength = ($('#timeline-line').outerWidth());
+
+var start = $('#timeline-start').position().left;
+
 
 var timelineSVGwidth = 963;
 
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
-var currentDeltaX = 0;
-var adjustDeltaX = 0;
+var currentDeltaX = start;
+var adjustDeltaX = start;
 
-var faseAfsprong = [0.032*timelineWidth,$('section.afsprong')];
-var faseVluchtfase1 = [0.225*timelineWidth, $('section.vluchtfase1')];
-var faseKeerpunt = [0.415*timelineWidth, $('section.keerpunt')];
-var faseVluchtfase2 = [0.61*timelineWidth, $('section.vluchtfase2')];
-var faseComment = [0.805*timelineWidth, $('section.comment')];
+sliderdot.style.left = currentDeltaX+"px";
+
+var faseAfsprong = [offsetLeft,$('section.afsprong')];
+var faseVluchtfase1 = [timelineLength/4*1+offsetLeft, $('section.vluchtfase1')];
+var faseKeerpunt = [timelineLength/4*2+offsetLeft, $('section.keerpunt')];
+var faseVluchtfase2 = [timelineLength/4*3+offsetLeft, $('section.vluchtfase2')];
+var faseComment = [timelineLength/4*4+offsetLeft, $('section.comment')];
 
 var hand1 = $(".hand1");
 var hand2 = $(".hand2");
@@ -88,22 +96,34 @@ var data = [
   ["42794","08.54.07","Borstcrawl","Track R","1.58","3.76","0.66","30.227","5.333","1.092","5.169","11.231","3.591","2.30478723404","5.84","20170307T101043"  ]
 ];
 
+//fase 1 = tm 50    = faseAfsprong
+//fase 2 = tm 100    = faseVluchtfase1
+//fase 3 = tm 150   = faseKeerpunt
+//fase 4 = tm 200   = faseVluchtfase2
+
 var points = [
-  {phase:faseAfsprong, value: "1,01m" ,text: "Afstand hoofd boven", position: hand1, weight: 1, meter: 20},
+  //1
+  {phase:faseAfsprong, value: "1,01m" ,text: "Afstand hoofd boven", position: hand1, weight: 1, meter: 10},
   {phase:faseAfsprong, value: "-0,782m" ,text: "Afstand heup eerste downbeat", position: enkel2, weight: 2, meter: 30},   
-  {phase:faseAfsprong, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 1, meter: 11},
-  {phase:faseVluchtfase1, value: "1,01m" ,text: "te hoog", position: hand1, weight: 1.5, meter: 90},
-  {phase:faseKeerpunt, value: "1,01m" ,text: "te hoog", position: middel1, weight: 1, meter: 120},
-  {phase:faseKeerpunt, value: "1,01m" ,text: "te hoog", position: hand1, weight: 1, meter: 110},
-  {phase:faseVluchtfase2, value: "1,01m" ,text: "te hoog", position: knie1, weight: 2, meter: 160},
-  {phase:faseVluchtfase2, value: "1,01m" ,text: "te hoog", position: hand2, weight: 1.5, meter: 170}
+  {phase:faseAfsprong, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 1, meter: 36},
+  //2
+  {phase:faseVluchtfase1, value: "-16%" ,text: "Afzetkracht", position: enkel1, weight: 1, meter: 55},
+  {phase:faseVluchtfase1, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 75},
+  //3
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: hand1, weight: 1, meter: 100},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: middel1, weight: 2, meter: 107},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: enkel2, weight: 1, meter: 115},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 2, meter: 120},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 130},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: knie1, weight: 2, meter: 135},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: knie2, weight: 1, meter: 142},
+  //4
+  {phase:faseVluchtfase2, value: "-16%" ,text: "Afzetkracht", position: enkel1, weight: 1, meter: 180},
+  {phase:faseVluchtfase2, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 189},
 ];
 
 for (i = 0; i < points.length; i++) { 
-  $('#timeline-svg').append('<circle style="opacity:1" fill="#4991FF" cx="'+(timelineSVGwidth/200*(points[i].meter))+'" cy="30" r="'+points[i].weight*5+'"></circle>'); 
-
-  // $(".active svg ",points[i].position).html("test");
-  // console.log(".active svg ",points[i].position);
+  $('#timeline-svg').append('<circle style="opacity:1; transform-origin: center;" fill="#4991FF" cx="'+((timelineSVGwidth)/200*(points[i].meter)+32)+'" cy="30" r="'+points[i].weight*5+'"></circle>'); 
 
   points[i].phase[1].find(points[i].position).children().eq(2).html(points[i].value);
   points[i].phase[1].find(points[i].position).children().eq(3).html(points[i].text);
@@ -124,12 +144,11 @@ mc.on("panleft panright", function(ev) {
 
   $('.tooltip').css("opacity","0");
 
-
   for (i = 0; i < points.length; i++) { 
-      if( currentDeltaX >= ((timelineWidth - firstStop)/timelineSVGwidth)*(timelineSVGwidth/200*(points[i].meter))
-       && currentDeltaX <= ((timelineWidth - firstStop)/timelineSVGwidth)*(timelineSVGwidth/200*(points[i].meter)) + timelineWidth/20){
+      if( currentDeltaX >= ((timelineLength/200)*points[i].meter)+offsetLeft
+       && currentDeltaX <= ((timelineLength/200)*points[i].meter)+offsetLeft + timelineWidth/20){
           points[i].phase[1].find(points[i].position).css("opacity","1"); 
-      }else{
+      }else{ 
           points[i].phase[1].find(points[i].position).css("opacity","0");
       }
   }

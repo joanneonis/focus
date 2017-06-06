@@ -121,7 +121,9 @@ strong {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 9vw; }
+  height: 9vw;
+  padding: 0px 70px;
+  background-color: #D8E9FF; }
   .timeline #sliderdot {
     position: fixed;
     background: white;
@@ -129,11 +131,12 @@ strong {
     width: 50px;
     height: 50px;
     bottom: 35px;
-    left: 30px;
+    left: 0px;
     z-index: 10;
     cursor: pointer;
     display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08); }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    margin-left: -25px; }
 
 section.algemeen,
 section.afsprong,
@@ -234,6 +237,43 @@ section.comment {
 .dashboard-inner {
   clear: both; }
 
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+.timer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+  .timer-container svg {
+    max-width: 140vw;
+    max-height: 140vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .timer-container svg #ring1, .timer-container svg #ring2, .timer-container svg #ring3 {
+      transform: rotate(0deg);
+      transform-origin: center;
+      -webkit-animation: rotate 40s linear infinite; }
+    .timer-container svg #ring2 {
+      transform-origin: 52.4% 48.4%;
+      animation-delay: -.3s; }
+    .timer-container svg #ring3 {
+      animation-delay: -.6s; }
+  .timer-container h1 {
+    font-size: 8vmax;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    margin: -10px 0 0 0; }
+
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -303,15 +343,6 @@ body {
   margin-right: 2%; }
   .circleholder-last {
     margin-right: 0; }
-
-circle,
-text {
-  opacity: 0;
-  transition: all 1s; }
-
-.timeline {
-  padding: 0px 50px;
-  background-color: #D8E9FF; }
 
 .stripes, .stripes:before, .stripes:after {
   height: 22px;

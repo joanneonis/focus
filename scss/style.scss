@@ -53,6 +53,10 @@ body {
   }
 }
 
+#wwvergetenform {
+  margin-bottom: 4%;
+}
+
 #inlog-links {
   bottom: 5vw;
   right: 5vw;
@@ -163,12 +167,42 @@ h2 {
   margin-top: 10px;
 }
 
-.comment, .register {
+.comment {
   padding: 6vh 5vw;
 
   form{
     margin: 4vh 0;
   }
+}
+
+.add-photo {
+  height: 70vh;
+  width: 15%;
+  display: inline-block;
+  float: left;
+}
+
+.profilepicture {
+  width: 8vw;
+}
+
+.registreer-form {
+  float: left;
+  width: 80%;
+  display: inline-block
+}
+
+.form-links {
+  width: 30%;
+  margin-right:2%;
+  margin-bottom:2%;
+  float: left;
+}
+
+.form-rechts {
+  width: 48%;
+  margin-bottom:2%;
+  float: left;
 }
 
 .inline {
@@ -183,23 +217,6 @@ label {
   display: inline-block;
   width: 100%;
 }
-
-.label-small {
-  @extend label;
-    min-width:20%;
-    width:30%;
-  }
-
-.label-normal {
-  @extend label;
-    width:60%;
-  }
-
-.label-fullwidth {
-  @extend label;
-    min-width:60%;
-    width:100%;
-  }
 
 input {
   background: rgba($brand-gray-light, .26);
@@ -224,23 +241,30 @@ input {
   }
 }
 
-.input-small {
+.input-register {
   @extend input;
-    min-width:20%;
-    width:30%;
-  }
-
-.input-fullwidth {
-  @extend input;
-    min-width:60%;
     width:100%;
   }
+
+.input-small {
+  @extend input;
+    min-width:50%;
+  }
+
+#email.input-register {
+  width:80%;
+}
 
 textarea {
   @extend input;
   height: auto;
   width: 100%;
   border-radius: 30px;
+}
+
+.title {
+  width:100%;
+  margin-bottom: 8vh;
 }
 
 .results-title{

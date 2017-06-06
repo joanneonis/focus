@@ -11,20 +11,20 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 var currentDeltaX = 0;
 var adjustDeltaX = 0;
 
-var faseAfsprong = [0.032*timelineWidth,$('.afsprong')];
-var faseVluchtfase1 = [0.225*timelineWidth, $('.vluchtfase1')];
-var faseKeerpunt = [0.415*timelineWidth, $('.keerpunt')];
-var faseVluchtfase2 = [0.61*timelineWidth, $('.vluchtfase2')];
-var faseComment = [0.805*timelineWidth, $('.comment')];
+var faseAfsprong = [0.032*timelineWidth,$('section.afsprong')];
+var faseVluchtfase1 = [0.225*timelineWidth, $('section.vluchtfase1')];
+var faseKeerpunt = [0.415*timelineWidth, $('section.keerpunt')];
+var faseVluchtfase2 = [0.61*timelineWidth, $('section.vluchtfase2')];
+var faseComment = [0.805*timelineWidth, $('section.comment')];
 
-var bovenbeen1 = $('.bovenbeen1'),
-    bovenbeen2 = $('.bovenbeen2'),
-    shoulder1 = $('.shoulder1'),
-    shoulder2 = $('.shoulder2'),
-    hand1 = $('.hand1'),
-    hand2 = $('.hand2'),
-    onderbeen1 = $('.onderbeen1'),
-    onderbeen2 = $('.onderbeen2');
+var hand1 = $(".hand1");
+var hand2 = $(".hand2");
+var enkel1 = $(".enkel1");
+var enkel2 = $(".enkel2");
+var middel1 = $(".middel1");
+var middel2 = $(".middel2");
+var knie1 = $(".knie1");
+var knie2 = $(".knie2");
 
 var data = [
   ["40502","16.19.44","Borstcrawl","Track R","1.72","4.4","0.66","30.185","4.554","0.962","5.48","10.16","2.379","1.99466666666","","20101125T141443"  ],
@@ -89,18 +89,24 @@ var data = [
 ];
 
 var points = [
-  {phase:faseAfsprong, percentage: 21 ,text: "te hoog", position: bovenbeen2, weight: 1, meter: 20},
-  {phase:faseAfsprong, percentage: 21 ,text: "te hoog", position: hand2, weight: 2, meter: 35},   
-  {phase:faseVluchtfase1, percentage: 21 ,text: "te hoog", position: onderbeen2, weight: 1, meter: 70},
-  {phase:faseVluchtfase1, percentage: 21 ,text: "te hoog", position: hand1, weight: 1.5, meter: 90},
-  {phase:faseKeerpunt, percentage: 21 ,text: "te hoog", position: bovenbeen2, weight: 1, meter: 120},
-  {phase:faseKeerpunt, percentage: 21 ,text: "te hoog", position: hand1, weight: 1, meter: 150},
-  {phase:faseVluchtfase2, percentage: 21 ,text: "te hoog", position: onderbeen2, weight: 2, meter: 160},
-  {phase:faseVluchtfase2, percentage: 21 ,text: "te hoog", position: hand2, weight: 1.5, meter: 170}
+  {phase:faseAfsprong, value: "1,01m" ,text: "Afstand hoofd boven", position: hand1, weight: 1, meter: 20},
+  {phase:faseAfsprong, value: "-0,782m" ,text: "Afstand heup eerste downbeat", position: enkel2, weight: 2, meter: 30},   
+  {phase:faseAfsprong, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 1, meter: 11},
+  {phase:faseVluchtfase1, value: "1,01m" ,text: "te hoog", position: hand1, weight: 1.5, meter: 90},
+  {phase:faseKeerpunt, value: "1,01m" ,text: "te hoog", position: middel1, weight: 1, meter: 120},
+  {phase:faseKeerpunt, value: "1,01m" ,text: "te hoog", position: hand1, weight: 1, meter: 110},
+  {phase:faseVluchtfase2, value: "1,01m" ,text: "te hoog", position: knie1, weight: 2, meter: 160},
+  {phase:faseVluchtfase2, value: "1,01m" ,text: "te hoog", position: hand2, weight: 1.5, meter: 170}
 ];
 
 for (i = 0; i < points.length; i++) { 
   $('#timeline-svg').append('<circle style="opacity:1" fill="#4991FF" cx="'+(timelineSVGwidth/200*(points[i].meter))+'" cy="30" r="'+points[i].weight*5+'"></circle>'); 
+
+  // $(".active svg ",points[i].position).html("test");
+  // console.log(".active svg ",points[i].position);
+
+  points[i].phase[1].find(points[i].position).children().eq(2).html(points[i].value);
+  points[i].phase[1].find(points[i].position).children().eq(3).html(points[i].text);
                             
   //svg workaround
   $(".timeline-line").html($(".timeline-line").html());
@@ -119,10 +125,10 @@ mc.on("panleft panright", function(ev) {
 
   for (i = 0; i < points.length; i++) { 
       if( currentDeltaX >= ((timelineWidth - firstStop)/timelineSVGwidth)*(timelineSVGwidth/200*(points[i].meter))
-       && currentDeltaX <= ((timelineWidth - firstStop)/timelineSVGwidth)*(timelineSVGwidth/200*(points[i].meter)) + timelineWidth/5){
-          points[i].phase[1].find(points[i].position).show(); 
+       && currentDeltaX <= ((timelineWidth - firstStop)/timelineSVGwidth)*(timelineSVGwidth/200*(points[i].meter)) + timelineWidth/20){
+          points[i].phase[1].find(points[i].position).css("opacity","1"); 
       }else{
-          points[i].phase[1].find(points[i].position).hide(); 
+          points[i].phase[1].find(points[i].position).css("opacity","0");
       }
   }
     

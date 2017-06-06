@@ -134,29 +134,49 @@ h1 {
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08); }
 
-.algemeen,
-.afsprong,
-.keerpunt,
-.vluchtfase1,
-.vluchtfase2,
-.comment {
+section.algemeen,
+section.afsprong,
+section.keerpunt,
+section.vluchtfase1,
+section.vluchtfase2,
+section.comment {
   opacity: 0;
   position: absolute;
   width: 100%;
   top: 0;
   bottom: 0; }
-  .algemeen svg,
-  .afsprong svg,
-  .keerpunt svg,
-  .vluchtfase1 svg,
-  .vluchtfase2 svg,
-  .comment svg {
+  section.algemeen svg,
+  section.afsprong svg,
+  section.keerpunt svg,
+  section.vluchtfase1 svg,
+  section.vluchtfase2 svg,
+  section.comment svg {
     max-height: calc(100vh - 9vw);
     max-width: 99vw;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+  section.algemeen.active,
+  section.afsprong.active,
+  section.keerpunt.active,
+  section.vluchtfase1.active,
+  section.vluchtfase2.active,
+  section.comment.active {
+    opacity: 1; }
+    section.algemeen.active circle,
+    section.algemeen.active text,
+    section.afsprong.active circle,
+    section.afsprong.active text,
+    section.keerpunt.active circle,
+    section.keerpunt.active text,
+    section.vluchtfase1.active circle,
+    section.vluchtfase1.active text,
+    section.vluchtfase2.active circle,
+    section.vluchtfase2.active text,
+    section.comment.active circle,
+    section.comment.active text {
+      opacity: 1; }
 
 .algemeen {
   padding: 8vh; }
@@ -199,12 +219,6 @@ circle,
 text {
   opacity: 0;
   transition: all 1s; }
-
-div.active {
-  opacity: 1; }
-  div.active circle,
-  div.active text {
-    opacity: 1; }
 
 ::selection {
   background: none; }
@@ -264,15 +278,16 @@ strong {
     top: 0;
     left: 16px; }
 
-.bovenbeen1,
-.bovenbeen2,
-.shoulder1,
-.shoulder2,
 .hand1,
 .hand2,
-.onderbeen1,
-.onderbeen2 {
-  display: none; }
+.enkel1,
+.enkel2,
+.middel1,
+.middel2,
+.knie1,
+.knie2 {
+  opacity: 0;
+  transition: all .2s; }
 
 h2 {
   font-weight: 100;

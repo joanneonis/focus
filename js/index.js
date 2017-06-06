@@ -20,10 +20,10 @@ var adjustDeltaX = start;
 sliderdot.style.left = currentDeltaX+"px";
 
 var faseAfsprong = [offsetLeft,$('section.afsprong')];
-var faseVluchtfase1 = [timelineLength/5*1+offsetLeft, $('section.vluchtfase1')];
-var faseKeerpunt = [timelineLength/5*2+offsetLeft, $('section.keerpunt')];
-var faseVluchtfase2 = [timelineLength/5*3+offsetLeft, $('section.vluchtfase2')];
-var faseComment = [timelineLength/5*4+offsetLeft, $('section.comment')];
+var faseVluchtfase1 = [timelineLength/4*1+offsetLeft, $('section.vluchtfase1')];
+var faseKeerpunt = [timelineLength/4*2+offsetLeft, $('section.keerpunt')];
+var faseVluchtfase2 = [timelineLength/4*3+offsetLeft, $('section.vluchtfase2')];
+var faseComment = [timelineLength/4*4+offsetLeft, $('section.comment')];
 
 var hand1 = $(".hand1");
 var hand2 = $(".hand2");
@@ -96,11 +96,10 @@ var data = [
   ["42794","08.54.07","Borstcrawl","Track R","1.58","3.76","0.66","30.227","5.333","1.092","5.169","11.231","3.591","2.30478723404","5.84","20170307T101043"  ]
 ];
 
-//fase 1 = tm 40    = faseAfsprong
-//fase 2 = tm 80    = faseVluchtfase1
-//fase 3 = tm 120   = faseKeerpunt
-//fase 4 = tm 160   = faseVluchtfase2
-//fase 5 = tm 200   = faseComment
+//fase 1 = tm 50    = faseAfsprong
+//fase 2 = tm 100    = faseVluchtfase1
+//fase 3 = tm 150   = faseKeerpunt
+//fase 4 = tm 200   = faseVluchtfase2
 
 var points = [
   //1
@@ -108,19 +107,19 @@ var points = [
   {phase:faseAfsprong, value: "-0,782m" ,text: "Afstand heup eerste downbeat", position: enkel2, weight: 2, meter: 30},   
   {phase:faseAfsprong, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 1, meter: 36},
   //2
-  {phase:faseVluchtfase1, value: "-16%" ,text: "Afzetkracht", position: enkel1, weight: 1, meter: 50},
+  {phase:faseVluchtfase1, value: "-16%" ,text: "Afzetkracht", position: enkel1, weight: 1, meter: 55},
   {phase:faseVluchtfase1, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 75},
   //3
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: hand1, weight: 1, meter: 88},
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: middel1, weight: 2, meter: 92},
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: enkel2, weight: 1, meter: 95},
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 2, meter: 100},
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 110},
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: knie1, weight: 2, meter: 110},
-  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: knie2, weight: 1, meter: 112},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: hand1, weight: 1, meter: 100},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: middel1, weight: 2, meter: 107},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: enkel2, weight: 1, meter: 115},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: middel2, weight: 2, meter: 120},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 130},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: knie1, weight: 2, meter: 135},
+  {phase:faseKeerpunt, value: "-16%" ,text: "Afzetkracht", position: knie2, weight: 1, meter: 142},
   //4
-  {phase:faseVluchtfase2, value: "-16%" ,text: "Afzetkracht", position: enkel1, weight: 1, meter: 130},
-  {phase:faseVluchtfase2, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 139},
+  {phase:faseVluchtfase2, value: "-16%" ,text: "Afzetkracht", position: enkel1, weight: 1, meter: 180},
+  {phase:faseVluchtfase2, value: "-16%" ,text: "Afzetkracht", position: hand2, weight: 1, meter: 189},
 ];
 
 for (i = 0; i < points.length; i++) { 

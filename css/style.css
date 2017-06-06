@@ -191,7 +191,7 @@ section.comment {
   top: 6vh;
   left: 5vw; }
 
-.algemeen-container .cards {
+.algemeen .cards {
   float: left;
   width: 40%;
   display: -webkit-box;
@@ -202,9 +202,9 @@ section.comment {
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   text-align: center; }
-  .algemeen-container .cards .card {
+  .algemeen .cards .card {
     width: 45%; }
-    .algemeen-container .cards .card img {
+    .algemeen .cards .card img {
       margin-top: -20px;
       max-height: 15vh;
       max-width: 100%; }
@@ -257,7 +257,7 @@ body {
       width: 35vw; }
 
 .arrow {
-  width: 48%; }
+  width: 110%; }
 
 #titel {
   width: 80%;

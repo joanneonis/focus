@@ -1,13 +1,3 @@
-body {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  color: #686868;
-  margin: 0;
-  -webkit-font-smoothing: antialiased; }
-
-* {
-  box-sizing: border-box; }
-
 .btn {
   background: #D2D8DB;
   border-radius: 50px;
@@ -66,52 +56,12 @@ body {
     .cirkel .faseicoon-first {
       padding: 8%; }
 
-#container {
-  position: relative;
-  height: calc(100vh - 9vw); }
+::selection {
+  background: none; }
 
-#wrapper {
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 4%; }
-
-#inloggen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); }
-  #inloggen #logocontainer {
-    float: left;
-    margin-right: 5.5vw;
-    margin-left: 5.5vw; }
-    #inloggen #logocontainer .logo {
-      width: 23vw; }
-  #inloggen #inlogformulier {
-    float: left; }
-    #inloggen #inlogformulier input, #inloggen #inlogformulier textarea {
-      width: 35vw; }
-
-.arrow {
-  width: 48%; }
-
-#titel {
-  width: 80%;
-  float: left; }
-
-#profielicoon {
-  width: 20%;
-  height: 100px;
-  text-align: right;
-  float: right;
-  clear: right; }
-
-#fasen {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15%;
-  margin-bottom: 4%; }
+h1 {
+  color: #4991FF;
+  font-weight: 400; }
 
 h3 {
   text-align: center;
@@ -119,14 +69,37 @@ h3 {
   font-size: 1.6em;
   font-weight: 300; }
 
-.circleholder {
-  margin-right: 2%; }
-  .circleholder-last {
-    margin-right: 0; }
+strong {
+  font-size: 1.7em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  display: inline-block;
+  color: #4991FF; }
 
-h1 {
-  color: #4991FF;
-  font-weight: 400; }
+.type-washed {
+  letter-spacing: 0.01em;
+  line-height: 1.4; }
+
+.label {
+  background: rgba(104, 104, 104, 0.1);
+  padding: 12px 20px;
+  display: inline-block;
+  font-weight: 400;
+  border-radius: 100px; }
+  .label-primary {
+    border: 2px solid #D8E9FF;
+    background: none;
+    color: #4991FF; }
+
+.cards {
+  padding: 0;
+  margin: 0; }
+  .cards .card {
+    box-shadow: 0px 0px 2vw rgba(0, 0, 0, 0.07);
+    display: block;
+    padding: 5% 8%;
+    margin-bottom: 5%;
+    border-radius: 0.4vw; }
 
 .timeline {
   background: #ccc;
@@ -211,17 +184,6 @@ section.comment {
     margin: -0.4em 0 .2em 0;
     font-weight: 500; }
 
-.label {
-  background: rgba(104, 104, 104, 0.1);
-  padding: 12px 20px;
-  display: inline-block;
-  font-weight: 400;
-  border-radius: 100px; }
-  .label-primary {
-    border: 2px solid #D8E9FF;
-    background: none;
-    color: #4991FF; }
-
 .time {
   font-size: 2em;
   font-weight: 500;
@@ -229,52 +191,105 @@ section.comment {
   top: 6vh;
   left: 5vw; }
 
-circle,
-text {
-  opacity: 0;
-  transition: all 1s; }
-
-::selection {
-  background: none; }
-
-.timeline {
-  padding: 0px 50px;
-  background-color: #D8E9FF; }
-
-strong {
-  font-size: 1.7em;
-  font-weight: 500;
-  margin-bottom: 0.3em;
-  display: inline-block;
-  color: #4991FF; }
-
-.type-washed {
-  letter-spacing: 0.01em;
-  line-height: 1.4; }
-
-.cards {
+.algemeen-container .cards {
   float: left;
   width: 40%;
-  padding: 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  justify-content: space-around; }
-  .cards .card {
-    box-shadow: 0px 0px 2vw rgba(0, 0, 0, 0.07);
-    display: block;
-    padding: 5% 8%;
-    margin-bottom: 5%;
-    text-align: center;
-    border-radius: 0.4vw;
+  justify-content: space-around;
+  text-align: center; }
+  .algemeen-container .cards .card {
     width: 45%; }
-    .cards .card img {
+    .algemeen-container .cards .card img {
       margin-top: -20px;
       max-height: 15vh;
       max-width: 100%; }
+
+.chart-container {
+  width: 70%;
+  float: left; }
+
+.score-container {
+  width: 30%;
+  float: left; }
+
+.dashboard-inner {
+  clear: both; }
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  color: #686868;
+  margin: 0;
+  -webkit-font-smoothing: antialiased; }
+
+* {
+  box-sizing: border-box; }
+
+#container {
+  position: relative;
+  height: calc(100vh - 9vw); }
+
+#wrapper {
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 4%; }
+
+#inloggen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+  #inloggen #logocontainer {
+    float: left;
+    margin-right: 5.5vw;
+    margin-left: 5.5vw; }
+    #inloggen #logocontainer .logo {
+      width: 23vw; }
+  #inloggen #inlogformulier {
+    float: left; }
+    #inloggen #inlogformulier input, #inloggen #inlogformulier textarea {
+      width: 35vw; }
+
+.arrow {
+  width: 48%; }
+
+#titel {
+  width: 80%;
+  float: left; }
+
+#profielicoon {
+  width: 20%;
+  height: 100px;
+  text-align: right;
+  float: right;
+  clear: right; }
+
+#fasen {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15%;
+  margin-bottom: 4%; }
+
+.circleholder {
+  margin-right: 2%; }
+  .circleholder-last {
+    margin-right: 0; }
+
+circle,
+text {
+  opacity: 0;
+  transition: all 1s; }
+
+.timeline {
+  padding: 0px 50px;
+  background-color: #D8E9FF; }
 
 .stripes, .stripes:before, .stripes:after {
   height: 22px;

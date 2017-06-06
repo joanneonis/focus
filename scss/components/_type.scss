@@ -1,0 +1,45 @@
+
+::selection {
+  background: none;
+}
+
+h1 {
+  color: $brand-primary;
+  font-weight: 400;
+}
+
+h3 {
+  text-align: center;
+  color: $brand-primary;
+  font-size: 1.6em;
+  font-weight: 300;
+}
+
+
+strong {
+  font-size: 1.7em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  display: inline-block;
+  color: $brand-primary;
+}
+
+.type-washed {
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+
+.label {
+    background: rgba(104, 104, 104, 0.1);
+    padding: 12px 20px;
+    display: inline-block;
+    font-weight: 400;
+    border-radius: 100px;
+
+    &-primary{
+      border: 2px solid $brand-secondary;
+      background: none;
+      color: $brand-primary; 
+    }
+}

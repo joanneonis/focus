@@ -1,6 +1,12 @@
 @import "variabelen";
 @import "mixins";
 
+@import "components/btn";
+@import "components/type";
+@import "components/cards";
+@import "layout/timeline";
+@import "layout/dashboard";
+
 body {
   font-family: $brand-font;
   font-weight: 300;
@@ -13,78 +19,6 @@ body {
   box-sizing: border-box;
 }
 
-.btn {
-  background: $brand-gray-light;
-  border-radius: 50px;
-  display: inline-block;
-  padding: 12px 20px;
-  color: $brand-gray-dark;
-  border: none;
-  text-decoration: none;
-  font-weight: 400;
-  border: 2px solid $brand-gray-light;
-  transition: all .2s;
-
-  &-primary {
-    background: $brand-primary;
-    color: white;
-    border-color: $brand-primary;
-
-    &:hover{
-      background-color: darken($brand-primary, 15%);
-      border-color: darken($brand-primary, 15%);
-    }
-  }
-  &-secondary{
-    background: none;
-    border-color: $brand-secondary;
-    color: $brand-gray-dark;
-
-    &:hover{
-      background-color: $brand-secondary;
-    }
-  }
-  &-circle {
-    width: 50px;
-    height: 50px; 
-    text-align: center;
-    margin: 0 35%;
-    display: block;
-  }
-  &-centered {
-    margin: 0 auto;
-  }
-  &-bigger {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-.cirkel {
-  background: white;
-  border-radius: 200px;
-  display: inline-block;
-  padding: 7px 12px;
-  border: 2px solid $brand-secondary;
-  width: 16.6vw;
-  height: 16.6vw;
-  line-height: 16.6vw;
-  text-align: center;
-  margin-right: 2%;
-  margin-bottom: 10%;
-  float: left;
-  &-filled {
-    background: $brand-secondary;
-  }
-  .faseicoon {
-    width: 90%;
-    max-height: 100%;
-    display: inline-block;
-    &-first {
-      padding: 8%;
-    }
-  }
-}
 
 #container {
   position: relative;
@@ -144,12 +78,7 @@ body {
   margin-bottom: 4%;
 }
 
-h3 {
-  text-align: center;
-  color: $brand-primary;
-  font-size: 1.6em;
-  font-weight: 300;
-}
+
 
 .circleholder {
   margin-right: 2%;
@@ -158,106 +87,8 @@ h3 {
   }
 }
 
-h1 {
-  color: $brand-primary;
-  font-weight: 400;
-}
 
-.timeline {
-  background: #ccc;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 9vw;
 
-  #sliderdot {
-    position: fixed;
-    background: white;
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-    bottom: 35px;
-    left: 30px;
-    z-index: 10;
-    cursor: pointer;
-    display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-  }
-}
-
-section.algemeen,
-section.afsprong,
-section.keerpunt,
-section.vluchtfase1,
-section.vluchtfase2,
-section.comment {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  svg {
-    max-height: calc(100vh - 9vw);
-    max-width: 99vw;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &.active {
-    opacity: 1;
-    circle,
-    text {
-      opacity: 1;
-    }
-  }
-}
-
-.algemeen {
-  padding: 8vh;
-}
-
-.algemeen-container {
-  position: relative;
-  float: left;
-  width: 60%;
-  height: calc(100vh - 9vw - 16vh);
-
-  &-inner {
-    @include centralize();
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 7.1vw;
-    margin: -0.4em 0 .2em 0;
-    font-weight: 500;
-  }
-}
-
-.label {
-    background: rgba(104, 104, 104, 0.1);
-    padding: 12px 20px;
-    display: inline-block;
-    font-weight: 400;
-    border-radius: 100px;
-
-    &-primary{
-      border: 2px solid $brand-secondary;
-      background: none;
-      color: $brand-primary; 
-    }
-}
-
-.time{
-  font-size: 2em;
-  font-weight: 500;
-  position: fixed;
-  top: 6vh;
-  left: 5vw;
-}
 
 circle,
 text {
@@ -267,54 +98,15 @@ text {
 
 
 
-::selection {
-  background: none;
-}
+
 
 .timeline {
   padding: 0px 50px;
   background-color: $brand-secondary;
 }
 
-strong {
-  font-size: 1.7em;
-  font-weight: 500;
-  margin-bottom: 0.3em;
-  display: inline-block;
-  color: $brand-primary;
-}
 
-.type-washed {
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-}
 
-.cards {
-  float: left;
-  width: 40%;
-  padding: 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-  .card {
-    box-shadow: 0px 0px 2vw rgba(0, 0, 0, 0.07);
-    display: block;
-    padding: 5% 8%;
-    margin-bottom: 5%;
-    text-align: center;
-    border-radius: 0.4vw;
-    width: 45%;
-    img {
-      margin-top: -20px;
-      max-height: 15vh;
-      max-width: 100%;
-    }
-  }
-}
 
 .stripes {
   height: 22px;

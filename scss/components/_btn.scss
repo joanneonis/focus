@@ -1,0 +1,75 @@
+@import "../variabelen";
+@import "../mixins";
+
+.btn {
+  background: $brand-gray-light;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 12px 20px;
+  color: $brand-gray-dark;
+  border: none;
+  text-decoration: none;
+  font-weight: 400;
+  border: 2px solid $brand-gray-light;
+  transition: all .2s;
+
+  &-primary {
+    background: $brand-primary;
+    color: white;
+    border-color: $brand-primary;
+
+    &:hover{
+      background-color: darken($brand-primary, 15%);
+      border-color: darken($brand-primary, 15%);
+    }
+  }
+  &-secondary{
+    background: none;
+    border-color: $brand-secondary;
+    color: $brand-gray-dark;
+
+    &:hover{
+      background-color: $brand-secondary;
+    }
+  }
+  &-circle {
+    width: 50px;
+    height: 50px; 
+    text-align: center;
+    margin: 0 35%;
+    display: block;
+  }
+  &-centered {
+    margin: 0 auto;
+  }
+  &-bigger {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.cirkel {
+  background: white;
+  border-radius: 200px;
+  display: inline-block;
+  padding: 7px 12px;
+  border: 2px solid $brand-secondary;
+  width: 16.6vw;
+  height: 16.6vw;
+  line-height: 16.6vw;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 10%;
+  float: left;
+  &-filled {
+    background: $brand-secondary;
+  }
+  .faseicoon {
+    width: 90%;
+    max-height: 100%;
+    display: inline-block;
+    &-first {
+      padding: 8%;
+    }
+  }
+}

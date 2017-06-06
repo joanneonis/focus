@@ -2,8 +2,6 @@
 @import "../mixins";
 
 
-
-
 .timeline {
   background: #ccc;
   position: fixed;
@@ -11,6 +9,8 @@
   right: 0;
   bottom: 0;
   height: 9vw;
+  padding: 0px 50px;
+  background-color: $brand-secondary;
 
   #sliderdot {
     position: fixed;
@@ -19,11 +19,12 @@
     width: 50px;
     height: 50px;
     bottom: 35px;
-    left: 30px;
+    left: 0px;
     z-index: 10;
     cursor: pointer;
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    margin-left: -25px;
   }
 }
 

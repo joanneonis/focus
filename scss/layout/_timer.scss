@@ -1,0 +1,43 @@
+
+
+@-webkit-keyframes rotate{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+}
+
+.timer-container{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow: hidden;
+
+    svg{
+        max-width: 140vw;
+        max-height: 140vh;
+        @include centralize();
+
+        #ring1 {
+            transform: rotate(0deg);
+            transform-origin: center;
+            -webkit-animation: rotate 40s linear infinite;
+        }
+        #ring2{
+            @extend #ring1;
+            transform-origin: 52.4% 48.4%;
+            animation-delay: -.3s;
+        }
+        #ring3{
+            @extend #ring1;
+            animation-delay: -.6s;
+        }
+    }
+
+    h1{
+        font-size: 8vmax;
+        @include centralize();
+        margin: -10px 0 0 0;
+    }
+}
+

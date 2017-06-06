@@ -1,58 +1,47 @@
-
-
 @import "variabelen";
+@import "mixins";
 
-$brand-font: 'Ubuntu', sans-serif;
-$brand-primary: #4991FF;
-$brand-secondary: #D8E9FF;
-
-$brand-gray-light: #D2D8DB;
-$brand-gray-dark: #686868;
-$brand-gray-darker: #53556F;
-
-
-body{
+body {
   font-family: $brand-font;
   font-weight: 300;
   color: $brand-gray-dark;
   margin: 0;
+  -webkit-font-smoothing: antialiased; //prettyfier 
 }
 
-*{box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
-.btn{
+.btn {
   background: $brand-gray-light;
   border-radius: 50px;
   display: inline-block;
-  padding: 7px 12px; 
+  padding: 7px 12px;
   color: $brand-gray-dark;
   border: none;
-  
-  &-primary{
+  &-primary {
     background: $brand-primary;
     color: white;
   }
-  &-circle{
+  &-circle {
     width: 50px;
-    height: 50px;
-    //line-height: 37px;
+    height: 50px; //line-height: 37px;
     //font-size: 1.2em;
     text-align: center;
     margin: 0 35%;
     display: block;
   }
-
   &-centered {
-    margin:0 auto;
+    margin: 0 auto;
   }
-
   &-bigger {
-    width:60px;
-    height:60px;
+    width: 60px;
+    height: 60px;
   }
 }
 
-.cirkel{
+.cirkel {
   background: white;
   border-radius: 200px;
   display: inline-block;
@@ -64,17 +53,14 @@ body{
   text-align: center;
   margin-right: 2%;
   margin-bottom: 10%;
-  float:left;
-
+  float: left;
   &-filled {
     background: $brand-secondary;
   }
-
   .faseicoon {
-    width:90%;
-    max-height:100%;
+    width: 90%;
+    max-height: 100%;
     display: inline-block;
-
     &-first {
       padding: 8%;
     }
@@ -88,7 +74,7 @@ body{
 
 #wrapper {
   padding-left: 8%;
-  padding-right:8%;
+  padding-right: 8%;
   padding-top: 4%;
 }
 
@@ -98,220 +84,269 @@ body{
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-
-    #logocontainer {
-    float:left;
+  #logocontainer {
+    float: left;
     margin-right: 5.5vw;
     margin-left: 5.5vw;
-    
-      .logo {
-        width:23vw;
-      }
+    .logo {
+      width: 23vw;
     }
-
+  }
   #inlogformulier {
-    float:left;
-    
+    float: left;
     input {
-      width:35vw;
+      width: 35vw;
     }
   }
 }
 
 .arrow {
-  width:48%;
+  width: 48%;
 }
 
 #titel {
-  width:80%;
-  float:left;
+  width: 80%;
+  float: left;
 }
 
 #profielicoon {
-  width:20%;
-  height:100px;
+  width: 20%;
+  height: 100px;
   text-align: right;
-  float:right;
+  float: right;
   clear: right;
 }
 
 #fasen {
-  display:flex;
-  justify-content:center;
-  width:100%;
-  margin-top:15%;
-  margin-bottom:4%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15%;
+  margin-bottom: 4%;
 }
 
-.ondertitel {
+h3 {
   text-align: center;
   color: $brand-primary;
   font-size: 1.6em;
+  font-weight: 300;
 }
 
 .circleholder {
-  margin-right:2%;
-
+  margin-right: 2%;
   &-last {
-    margin-right:0;
+    margin-right: 0;
   }
 }
 
-h1{
+h1 {
   color: $brand-primary;
   font-weight: 400;
 }
 
-.timeline{
+.timeline {
   background: #ccc;
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 9vw;
-  
-  #sliderdot{
+  #sliderdot {
     position: fixed;
-    background:white;
+    background: white;
     border-radius: 50px;
     width: 50px;
     height: 50px;
     bottom: 25px;
-    left:20px;
+    left: 20px;
     z-index: 10;
     cursor: pointer;
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   }
-} 
- 
-.algemeen,.afsprong,.keerpunt, .vluchtfase1, .vluchtfase2, .comment{
-  opacity:0;
+}
+
+.algemeen,
+.afsprong,
+.keerpunt,
+.vluchtfase1,
+.vluchtfase2,
+.comment {
+  opacity: 0;
   position: absolute;
   width: 100%;
-  top:0;
-  bottom:0;
-
+  top: 0;
+  bottom: 0;
   svg {
-      max-height: calc(100vh - 9vw);
-      max-width: 99vw;
-
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%); 
-  }
-}
-
-.algemeen{
-  padding: 8vh;
-}
-.algemeen-container{
-  position: relative;
-  float: left;
-  width: 70%;
-  height: calc(100vh - 9vw - 16vh);
-  
-  &-inner{
+    max-height: calc(100vh - 9vw);
+    max-width: 99vw;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);   
-    text-align: center; 
-  }
-  h1{
-    font-size: 4em;
-    margin:0 0 .2em 0;
+    transform: translate(-50%, -50%);
   }
 }
-  
-circle, text{
-  opacity:0;
+
+.algemeen {
+  padding: 8vh;
+}
+
+.algemeen-container {
+  position: relative;
+  float: left;
+  width: 60%;
+  height: calc(100vh - 9vw - 16vh);
+
+  &-inner {
+    @include centralize();
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 7.1vw;
+    margin: -0.4em 0 .2em 0;
+    font-weight: 500;
+  }
+}
+
+.label {
+    background: rgba(104, 104, 104, 0.1);
+    padding: 12px 20px;
+    display: inline-block;
+    font-weight: 400;
+    border-radius: 100px;
+
+    &-primary{
+      border: 2px solid $brand-secondary;
+      background: none;
+      color: $brand-primary; 
+    }
+}
+
+.time{
+  font-size: 2em;
+  font-weight: 500;
+  position: fixed;
+  top: 6vh;
+  left: 5vw;
+}
+
+circle,
+text {
+  opacity: 0;
   transition: all 1s;
 }
 
-div.active{
-  opacity:1;
-  
-  circle, text{
+div.active {
+  opacity: 1;
+  circle,
+  text {
     opacity: 1;
   }
 }
 
-::selection{
-  background:none;
+::selection {
+  background: none;
 }
 
-.timeline{
+.timeline {
   padding: 0px 20px;
   background-color: $brand-secondary;
 }
 
-strong{
-  font-size: 1.2em;
+strong {
+  font-size: 1.7em;
   font-weight: 500;
-  color:$brand-primary;
+  margin-bottom: 0.3em;
+  display: inline-block;
+  color: $brand-primary;
 }
 
-.cards{
+.type-washed {
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.cards {
   float: left;
-  width: 30%;
+  width: 40%;
   padding: 0;
-  
-  .card{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  .card {
+    box-shadow: 0px 0px 2vw rgba(0, 0, 0, 0.07);
     display: block;
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 5% 8%;
+    margin-bottom: 5%;
+    text-align: center;
+    border-radius: 0.4vw;
+    width: 45%;
+    img {
+      margin-top: -20px;
+      max-height: 180px;
+      max-width: 100%;
+    }
   }
 }
 
-.stripes{
-    height: 22px;
-    width: 2px;
-    background: $brand-gray-dark;
-    position: absolute;
-    left: 16px;
-    top: 14px;
-  
-  &:before{
+.stripes {
+  height: 22px;
+  width: 2px;
+  background: $brand-gray-dark;
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  &:before {
     content: "";
     @extend .stripes;
-    top:0;
+    top: 0;
     left: 8px;
   }
-  &:after{
+  &:after {
     content: "";
     @extend .stripes;
-    top:0;
+    top: 0;
     left: 16px;
   }
 }
 
-.bovenbeen1,.bovenbeen2,.shoulder1,.shoulder2,.hand1,.hand2,.onderbeen1,.onderbeen2{
-  display:none;
+.bovenbeen1,
+.bovenbeen2,
+.shoulder1,
+.shoulder2,
+.hand1,
+.hand2,
+.onderbeen1,
+.onderbeen2 {
+  display: none;
 }
 
-h2{
+h2 {
   font-weight: 100;
   color: $brand-gray-darker;
   font-size: 2.5em;
-  margin-bottom:0;
-  margin-top:0;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-h3{
+.subtitle {
   font-weight: 100;
   color: $brand-gray-dark;
   font-size: 1.1em;
-  margin-top:10px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-.comment{
+.comment {
   padding: 30px;
 }
 
-label{
+label {
   margin: 10px 5px;
   text-align: left;
   color: $brand-primary;
@@ -320,8 +355,8 @@ label{
   width: 100%;
 }
 
-input{
-  background:rgba($brand-secondary, .18);
+input {
+  background: rgba($brand-secondary, .18);
   border: 3px solid rgba($brand-primary, .18);
   font-size: 1em;
   color: $brand-gray-dark;
@@ -331,21 +366,25 @@ input{
   font-weight: 100;
   font-family: $brand-font;
   min-width: 60%;
-  
-  &:focus{
+  &:focus {
     outline: none;
     border: 2px solid $brand-primary;
   }
-
-  &::selection{
-  background:rgba($brand-primary, .28);;
+  &::selection {
+    background: rgba($brand-primary, .28);
+    ;
+  }
 }
-}
 
-textarea{
+textarea {
   @extend input;
   height: auto;
   width: 100%;
   border-radius: 30px;
 }
 
+.results-title{
+  position: fixed;
+    top: 6vh;
+    left: 5vw;
+}

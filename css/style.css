@@ -2,7 +2,8 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   color: #686868;
-  margin: 0; }
+  margin: 0;
+  -webkit-font-smoothing: antialiased; }
 
 * {
   box-sizing: border-box; }
@@ -98,10 +99,11 @@ body {
   margin-top: 15%;
   margin-bottom: 4%; }
 
-.ondertitel {
+h3 {
   text-align: center;
   color: #4991FF;
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  font-weight: 300; }
 
 .circleholder {
   margin-right: 2%; }
@@ -132,13 +134,23 @@ h1 {
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08); }
 
-.algemeen, .afsprong, .keerpunt, .vluchtfase1, .vluchtfase2, .comment {
+.algemeen,
+.afsprong,
+.keerpunt,
+.vluchtfase1,
+.vluchtfase2,
+.comment {
   opacity: 0;
   position: absolute;
   width: 100%;
   top: 0;
   bottom: 0; }
-  .algemeen svg, .afsprong svg, .keerpunt svg, .vluchtfase1 svg, .vluchtfase2 svg, .comment svg {
+  .algemeen svg,
+  .afsprong svg,
+  .keerpunt svg,
+  .vluchtfase1 svg,
+  .vluchtfase2 svg,
+  .comment svg {
     max-height: calc(100vh - 9vw);
     max-width: 99vw;
     position: absolute;
@@ -152,7 +164,7 @@ h1 {
 .algemeen-container {
   position: relative;
   float: left;
-  width: 70%;
+  width: 60%;
   height: calc(100vh - 9vw - 16vh); }
   .algemeen-container-inner {
     position: absolute;
@@ -161,16 +173,37 @@ h1 {
     transform: translate(-50%, -50%);
     text-align: center; }
   .algemeen-container h1 {
-    font-size: 4em;
-    margin: 0 0 .2em 0; }
+    font-size: 7.1vw;
+    margin: -0.4em 0 .2em 0;
+    font-weight: 500; }
 
-circle, text {
+.label {
+  background: rgba(104, 104, 104, 0.1);
+  padding: 12px 20px;
+  display: inline-block;
+  font-weight: 400;
+  border-radius: 100px; }
+  .label-primary {
+    border: 2px solid #D8E9FF;
+    background: none;
+    color: #4991FF; }
+
+.time {
+  font-size: 2em;
+  font-weight: 500;
+  position: fixed;
+  top: 6vh;
+  left: 5vw; }
+
+circle,
+text {
   opacity: 0;
   transition: all 1s; }
 
 div.active {
   opacity: 1; }
-  div.active circle, div.active text {
+  div.active circle,
+  div.active text {
     opacity: 1; }
 
 ::selection {
@@ -181,19 +214,39 @@ div.active {
   background-color: #D8E9FF; }
 
 strong {
-  font-size: 1.2em;
+  font-size: 1.7em;
   font-weight: 500;
+  margin-bottom: 0.3em;
+  display: inline-block;
   color: #4991FF; }
+
+.type-washed {
+  letter-spacing: 0.01em;
+  line-height: 1.4; }
 
 .cards {
   float: left;
-  width: 30%;
-  padding: 0; }
+  width: 40%;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around; }
   .cards .card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 2vw rgba(0, 0, 0, 0.07);
     display: block;
-    padding: 20px;
-    margin-bottom: 10px; }
+    padding: 5% 8%;
+    margin-bottom: 5%;
+    text-align: center;
+    border-radius: 0.4vw;
+    width: 45%; }
+    .cards .card img {
+      margin-top: -20px;
+      max-height: 180px;
+      max-width: 100%; }
 
 .stripes, .stripes:before, .stripes:after {
   height: 22px;
@@ -211,7 +264,14 @@ strong {
     top: 0;
     left: 16px; }
 
-.bovenbeen1, .bovenbeen2, .shoulder1, .shoulder2, .hand1, .hand2, .onderbeen1, .onderbeen2 {
+.bovenbeen1,
+.bovenbeen2,
+.shoulder1,
+.shoulder2,
+.hand1,
+.hand2,
+.onderbeen1,
+.onderbeen2 {
   display: none; }
 
 h2 {
@@ -221,10 +281,11 @@ h2 {
   margin-bottom: 0;
   margin-top: 0; }
 
-h3 {
+.subtitle {
   font-weight: 100;
   color: #686868;
   font-size: 1.1em;
+  display: inline-block;
   margin-top: 10px; }
 
 .comment {
@@ -259,5 +320,10 @@ textarea {
   height: auto;
   width: 100%;
   border-radius: 30px; }
+
+.results-title {
+  position: fixed;
+  top: 6vh;
+  left: 5vw; }
 
 /*# sourceMappingURL=style.css.map */

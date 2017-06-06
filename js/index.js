@@ -100,11 +100,16 @@ var points = [
 ];
 
 for (i = 0; i < points.length; i++) { 
-  $('#timeline-svg').append('<circle style="opacity:1" fill="#4991FF" cx="'+(timelineSVGwidth/200*(points[i].meter))+'" cy="30" r="'+points[i].weight*8+'"></circle>'); 
+  $('#timeline-svg').append('<circle style="opacity:1" fill="#4991FF" cx="'+(timelineSVGwidth/200*(points[i].meter))+'" cy="30" r="'+points[i].weight*5+'"></circle>'); 
                             
   //svg workaround
   $(".timeline-line").html($(".timeline-line").html());
 }
+
+// : seperated time
+function str_pad_left(string,pad,length) {
+      return (new Array(length+1).join(pad)+string).slice(-length);
+    }
 
 mc.on("panleft panright", function(ev) {
   currentDeltaX = adjustDeltaX + ev.deltaX;
@@ -152,8 +157,13 @@ mc.on("panleft panright", function(ev) {
        faseComment[1].removeClass('active');
      }  
    
+   var time = currentDeltaX; //nog aanpassen naar echt een berekening seconden/meters oid
+   var minutes = Math.floor(time / 60);
+   var seconds = time % 60;
+  var prettyTime = str_pad_left(minutes,'0',2)+':'+str_pad_left(seconds,'0',2);
   
   sliderdot.style.left = currentDeltaX+"px";
+  $('.time').html(prettyTime+'s');
 });
 
 mc.on("panend", function(ev){

@@ -32,7 +32,16 @@
         }
 
         $(document).ready(function(){
-            $('button').click(controleren);
+            $('#gebruikersnaam').focus();
+
+            if($("#gebruikersnaam").is(":focus") || $("#wachtwoord").is(":focus")) {
+                $(document).keypress(function(e) {
+                    if(e.which == 13) {
+                        controleren();
+                        window.location.href = "dashboard.html";
+                    }
+			    });
+            }
         });
     </script>
 </head>
@@ -43,7 +52,7 @@
 
         <div id="inloggen">
             <div id="logocontainer">
-			    <img src="assets/img/logo.svg" class="logo">
+			    <img src="assets/img/logo_login.svg" class="logo">
             </div>
 
             <div id="inlogformulier">
@@ -53,8 +62,9 @@
                     <br><br>
                     <label for="wachtwoord">Wachtwoord</label>
                     <input type="password" name="wachtwoord" id="wachtwoord">
-                    <br><br>
-                    <button class="btn btn-primary btn-circle" type="submit" form="inlogform" onclick="controleren(); location.href='dashboard.html'">
+                    <br><br><br>
+                    <button class="btn btn-primary btn-rounded" type="submit" form="inlogform" onclick="controleren(); location.href='dashboard.html'">
+                        <span class="arrow-text">Inloggen</span>
                         <img src="assets/img/arrow.svg" class="arrow">
                     </button>
                 </div>

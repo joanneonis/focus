@@ -69,12 +69,20 @@ a.small {
 }
 
 .arrow {
-  width: 200%;
+  //width: 200%;
+  width: 13px;
   margin: 0 -2px;
 
   &-back {
     width: 140%;
     margin: 0 -10px;
+  }
+
+  &-text {
+    font-family: $brand-font;
+    font-size: 1.5em;
+    float: left;
+    margin-right: 30px;
   }
 }
 
@@ -222,7 +230,8 @@ label {
   margin: 10px 5px;
   text-align: left;
   color: $brand-primary;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 0.95em;
   display: inline-block;
   width: 100%;
 }

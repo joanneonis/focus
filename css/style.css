@@ -339,6 +339,9 @@ a.small {
     float: left;
     margin-right: 30px; }
 
+.alignright {
+  float: right; }
+
 .naamholder, .iconholder {
   float: right; }
 

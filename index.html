@@ -47,17 +47,17 @@
             </div>
 
             <div id="inlogformulier">
-                <form action="dashboard.html" method="post" id="inlogform">
+                <div id="inlogform">
                     <label for="gebruikersnaam">Gebruikersnaam</label>
                     <input type="text" name="gebruikersnaam" id="gebruikersnaam"/>
                     <br><br>
                     <label for="wachtwoord">Wachtwoord</label>
                     <input type="password" name="wachtwoord" id="wachtwoord">
                     <br><br>
-                    <button class="btn btn-primary btn-circle" type="submit" form="inlogform">
+                    <button class="btn btn-primary btn-circle" type="submit" form="inlogform" onclick="controleren(); location.href='dashboard.html'">
                         <img src="assets/img/arrow.svg" class="arrow">
                     </button>
-                </form>
+                </div>
             </div>
         </div>
 

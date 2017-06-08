@@ -6,107 +6,115 @@
 	<title>Focus | Training bezig</title>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         //	Simple example of using private variables
-//
-//	To start the stopwatch:
-//		obj.start();
-//
-//	To get the duration in milliseconds without pausing / resuming:
-//		var	x = obj.time();
-//
-//	To pause the stopwatch:
-//		var	x = obj.stop();	// Result is duration in milliseconds
-//
-//	To resume a paused stopwatch
-//		var	x = obj.start();	// Result is duration in milliseconds
-//
-//	To reset a paused stopwatch
-//		obj.stop();
-//
-var	clsStopwatch = function() {
-		// Private vars
-		var	startAt	= 0;	// Time of last start / resume. (0 if not running)
-		var	lapTime	= 0;	// Time on the clock when last stopped in milliseconds
+		//
+		//	To start the stopwatch:
+		//		obj.start();
+		//
+		//	To get the duration in milliseconds without pausing / resuming:
+		//		var	x = obj.time();
+		//
+		//	To pause the stopwatch:
+		//		var	x = obj.stop();	// Result is duration in milliseconds
+		//
+		//	To resume a paused stopwatch
+		//		var	x = obj.start();	// Result is duration in milliseconds
+		//
+		//	To reset a paused stopwatch
+		//		obj.stop();
+		//
+		var	clsStopwatch = function() {
+				// Private vars
+				var	startAt	= 0;	// Time of last start / resume. (0 if not running)
+				var	lapTime	= 0;	// Time on the clock when last stopped in milliseconds
 
-		var	now	= function() {
-				return (new Date()).getTime(); 
-			}; 
- 
-		// Public methods
-		// Start or resume
-		this.start = function() {
-				startAt	= startAt ? startAt : now();
+				var	now	= function() {
+						return (new Date()).getTime(); 
+					}; 
+		
+				// Public methods
+				// Start or resume
+				this.start = function() {
+						startAt	= startAt ? startAt : now();
+					};
+
+				// Stop or pause
+				this.stop = function() {
+						// If running, update elapsed time otherwise keep it
+						lapTime	= startAt ? lapTime + now() - startAt : lapTime;
+						startAt	= 0; // Paused
+					};
+
+				// Reset
+				this.reset = function() {
+						lapTime = startAt = 0;
+					};
+
+				// Duration
+				this.time = function() {
+						return lapTime + (startAt ? now() - startAt : 0); 
+					};
 			};
 
-		// Stop or pause
-		this.stop = function() {
-				// If running, update elapsed time otherwise keep it
-				lapTime	= startAt ? lapTime + now() - startAt : lapTime;
-				startAt	= 0; // Paused
-			};
+		var x = new clsStopwatch();
+		var $time;
+		var clocktimer;
 
-		// Reset
-		this.reset = function() {
-				lapTime = startAt = 0;
-			};
+		function pad(num, size) {
+			var s = "0000" + num;
+			return s.substr(s.length - size);
+		}
 
-		// Duration
-		this.time = function() {
-				return lapTime + (startAt ? now() - startAt : 0); 
-			};
-	};
+		function formatTime(time) {
+			var h = m = s = ms = 0;
+			var newTime = '';
 
-var x = new clsStopwatch();
-var $time;
-var clocktimer;
+			h = Math.floor( time / (60 * 60 * 1000) );
+			time = time % (60 * 60 * 1000);
+			m = Math.floor( time / (60 * 1000) );
+			time = time % (60 * 1000);
+			s = Math.floor( time / 1000 );
+			ms = time % 1000;
 
-function pad(num, size) {
-	var s = "0000" + num;
-	return s.substr(s.length - size);
-}
+			newTime = pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 2);
+			return newTime;
+		}
 
-function formatTime(time) {
-	var h = m = s = ms = 0;
-	var newTime = '';
+		function show() {
+			$time = document.getElementById('time');
+			update();
+		}
 
-	h = Math.floor( time / (60 * 60 * 1000) );
-	time = time % (60 * 60 * 1000);
-	m = Math.floor( time / (60 * 1000) );
-	time = time % (60 * 1000);
-	s = Math.floor( time / 1000 );
-	ms = time % 1000;
+		function update() {
+			$time.innerHTML = formatTime(x.time())+'s';
+			
+			if(x.time() >= 12250){
+				stop();
+				location.href='resultaten_algemeen.html';
+			}
+		}
 
-	newTime = pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 2);
-	return newTime;
-}
-
-function show() {
-	$time = document.getElementById('time');
-	update();
-}
-
-function update() {
-	$time.innerHTML = formatTime(x.time())+'s';
-	
-	if(x.time() >= 12250){
-		stop();
-		location.href='resultaten_algemeen.html';
-	}
-}
-
-function start() {
-	clocktimer = setInterval("update()", 1);
-	x.start();
-}
+		function start() {
+			clocktimer = setInterval("update()", 1);
+			x.start();
+		}
 
 
-function stop() {
-	x.stop();
-	clearInterval(clocktimer);
-}
-
-
+		function stop() {
+			x.stop();
+			clearInterval(clocktimer);
+		}
+</script>
+<script>
+		$(document).ready(function() {
+			$(document).keypress(function(e) {
+				if(e.which == 13) {
+					window.location.href = "resultaten_algemeen.html";
+				}
+			});
+		});
 </script>
 </head>
 <body onload="show();start();">

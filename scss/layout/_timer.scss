@@ -5,6 +5,11 @@
     100%{transform: rotate(360deg)}
 }
 
+@-webkit-keyframes rotate-left{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(-360deg)}
+}
+
 .timer-container{
     position: absolute;
     top:0;
@@ -25,6 +30,7 @@
         }
         #ring2{
             @extend #ring1;
+            -webkit-animation: rotate-left 40s linear infinite;
             transform-origin: 52.4% 48.4%;
             animation-delay: -.3s;
         }

@@ -1,0 +1,23 @@
+
+
+
+
+.page-title{
+    margin-bottom: 50px;
+    position: relative;
+    float: left;
+
+    .btn{
+        position: absolute;
+        left: -70px;
+    }
+
+    .subtitle {
+        font-weight: 100;
+        color: $brand-gray-dark;
+        font-size: 1.1em;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+}

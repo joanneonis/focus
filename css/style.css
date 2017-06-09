@@ -16,38 +16,28 @@
     .btn-primary:hover {
       background-color: #0063fc;
       border-color: #0063fc; }
-  .btn-back {
-    background: white;
-    border-color: #4991FF;
-    border: 1px solid #4991FF; }
   .btn-secondary {
     background: none;
     border-color: #D8E9FF;
     color: #686868; }
     .btn-secondary:hover {
       background-color: #D8E9FF; }
-    .btn-secondary-small {
-      font-size: 0.75em;
-      padding: 8px 15px;
-      margin-right: 0.5vw; }
+  .btn-xs {
+    font-size: 0.75em;
+    padding: 8px 15px;
+    margin-right: 0.5vw; }
+  .btn-lg {
+    font-size: 1em; }
+    .btn-lg .icon-arrow {
+      width: 13px;
+      margin: -7px -2px -5px 10px; }
   .btn-circle {
     width: 50px;
     height: 50px;
-    text-align: center;
-    margin: 0 35%;
-    display: block; }
-  .btn-rounded {
-    height: 50px;
-    text-align: center;
-    display: block; }
-  .btn-centered {
-    margin: 0 auto; }
-  .btn-backcircle {
-    width: 50px;
-    height: 50px;
-    margin-right: 1%;
-    text-align: center;
-    display: inline; }
+    padding: 0; }
+    .btn-circle img {
+      width: 10px;
+      display: inline-block; }
 
 ::selection {
   background: none; }
@@ -150,6 +140,20 @@ strong {
     left: 0;
     right: 0;
     margin: auto; }
+
+.page-title {
+  margin-bottom: 50px;
+  position: relative;
+  float: left; }
+  .page-title .btn {
+    position: absolute;
+    left: -70px; }
+  .page-title .subtitle {
+    font-weight: 100;
+    color: #686868;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-top: 10px; }
 
 .timeline {
   background: #ccc;
@@ -326,9 +330,6 @@ section.comment {
   .user-image img {
     max-width: 100%; }
 
-#page-title {
-  float: left; }
-
 @-webkit-keyframes rotate {
   0% {
     transform: rotate(0deg); }
@@ -371,8 +372,15 @@ section.comment {
 .cirkel-filled .body-line * {
   stroke: #4991FF !important; }
 
+#fasen {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  margin: 50px 0; }
+
 .circleholder {
-  margin-right: 2%; }
+  margin-right: 2%;
+  display: inline-block; }
   .circleholder-last {
     margin-right: 0; }
 
@@ -386,12 +394,39 @@ section.comment {
   width: 16.6vw;
   height: 16.6vw;
   line-height: 16.6vw;
-  text-align: center;
-  margin-right: 2%;
-  margin-bottom: 10%;
-  float: left; }
+  text-align: center; }
   .cirkel-filled {
     background: #f2f8ff; }
+
+#inloggen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+  #inloggen #logocontainer {
+    float: left;
+    margin-right: 5.5vw;
+    margin-top: -2.1em; }
+    #inloggen #logocontainer .logo {
+      width: 23vw; }
+  #inloggen #inlogformulier {
+    float: left; }
+    #inloggen #inlogformulier input, #inloggen #inlogformulier .input-register, #inloggen #inlogformulier .input-small, #inloggen #inlogformulier textarea {
+      width: 100%; }
+  #inloggen .btn {
+    float: right; }
+
+#wwvergetenform {
+  margin-bottom: 4%; }
+
+#inlog-links {
+  bottom: 5vw;
+  right: 5vw;
+  position: absolute; }
+
+#inlogform {
+  width: 35vw; }
 
 body {
   font-family: "Ubuntu", sans-serif;
@@ -403,84 +438,12 @@ body {
 * {
   box-sizing: border-box; }
 
-#container {
-  position: relative;
-  height: calc(100vh - 9vw); }
-
-#wrapper {
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 4%; }
-
-#inloggen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); }
-  #inloggen #logocontainer {
-    float: left;
-    margin-right: 5.5vw;
-    margin-left: 5.5vw; }
-    #inloggen #logocontainer .logo {
-      width: 23vw; }
-  #inloggen #inlogformulier {
-    float: left; }
-    #inloggen #inlogformulier input, #inloggen #inlogformulier .input-register, #inloggen #inlogformulier .input-small, #inloggen #inlogformulier textarea {
-      width: 35vw; }
-
-#wwvergetenform {
-  margin-bottom: 4%; }
-
-#inlog-links {
-  bottom: 5vw;
-  right: 5vw;
-  position: absolute; }
-
-.arrow {
-  width: 13px;
-  margin: 0 -2px; }
-  .arrow-back {
-    width: 140%;
-    margin: 0 -10px; }
-  .arrow-text {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.5em;
-    float: left;
-    margin-right: 30px; }
-
-.alignright {
-  float: right; }
-
-.darktext {
-  font-size: 1.1em;
-  font-weight: 400;
-  color: #222222; }
-
-#titel {
-  width: 60%;
-  float: left; }
-
-#fasen {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15%;
-  margin-bottom: 4%; }
-
 h2 {
   font-weight: 100;
   color: #53556F;
   font-size: 2.5em;
   margin-bottom: 0;
   margin-top: 0; }
-
-.subtitle {
-  font-weight: 100;
-  color: #686868;
-  font-size: 1.1em;
-  display: inline-block;
-  margin-top: 10px; }
 
 .comment {
   padding: 6vh 5vw; }

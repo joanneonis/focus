@@ -11,9 +11,17 @@
     }
 }
 
+#fasen {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+}
 
 .circleholder {
   margin-right: 2%;
+  display: inline-block;
+
   &-last {
     margin-right: 0;
   }
@@ -30,11 +38,8 @@
   height: 16.6vw;
   line-height: 16.6vw;
   text-align: center;
-  margin-right: 2%;
-  margin-bottom: 10%;
-  float: left;
 
   &-filled {
     background: #f2f8ff;
   }
-}
+} 

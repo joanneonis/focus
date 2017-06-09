@@ -24,12 +24,6 @@
     }
   }
 
-  &-back {
-    background: white;
-    border-color: $brand-primary;
-    border:1px solid $brand-primary;
-  }
-
   &-secondary{
     background: none;
     border-color: $brand-secondary;
@@ -38,45 +32,32 @@
     &:hover{
       background-color: $brand-secondary;
     }
+  }
+  
+  &-xs {
+    font-size: 0.75em;
+    padding: 8px 15px;
+    margin-right:0.5vw;
+  }
+  &-lg{
+    font-size: 1em;
 
-    &-small {
-      font-size: 0.75em;
-      padding: 8px 15px;
-      margin-right:0.5vw;
+    .icon-arrow {
+      width: 13px;
+      margin: -7px -2px -5px 10px;
     }
+  }
 
-  }
-  &-circle {
+  &-circle{
     width: 50px;
-    height: 50px; 
-    text-align: center;
-    margin: 0 35%;
-    display: block;
-  }
-  &-rounded {
-    //width: 50px;
-    height: 50px; 
-    text-align: center;
-    //margin: 0 35%;
-    display: block;
-  }
-  &-centered {
-    margin: 0 auto;
-  }
-<<<<<<< HEAD
+    height: 50px;
+    padding: 0;
 
-=======
-  &-bigger {
-    width: 60px;
-    height: 60px;
+    img{
+      width: 10px;
+      display: inline-block;
+    }
   }
->>>>>>> ab85e79f524cb93e3719d37ef88b57bcdcad7c2e
-  &-backcircle {
-    width: 50px;
-    height: 50px; 
-    margin-right:1%;
-    text-align: center;
-    display: inline;
-  }
+  
 }
 

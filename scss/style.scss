@@ -5,10 +5,12 @@
 @import "components/type";
 @import "components/cards";
 @import "components/tooltip";
+@import "components/title";
 @import "layout/timeline";
 @import "layout/dashboard";
 @import "layout/timer";
 @import "layout/fase";
+@import "layout/sign-in";
 
 body {
   font-family: $brand-font;
@@ -22,95 +24,6 @@ body {
   box-sizing: border-box;
 }
 
-#container {
-  position: relative;
-  height: calc(100vh - 9vw);
-}
-
-#wrapper {
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 4%;
-}
-
-#inloggen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  #logocontainer {
-    float: left;
-    margin-right: 5.5vw;
-    margin-left: 5.5vw;
-    .logo {
-      width: 23vw;
-    }
-  }
-  #inlogformulier {
-    float: left;
-    input {
-      width: 35vw;
-    }
-  }
-}
-
-#wwvergetenform {
-  margin-bottom: 4%;
-}
-
-#inlog-links {
-  bottom: 5vw;
-  right: 5vw;
-  position: absolute;
-}
-
-.arrow {
-  //width: 200%;
-  width: 13px;
-  margin: 0 -2px;
-
-  &-back {
-    width: 140%;
-    margin: 0 -10px;
-  }
-
-  &-text {
-    font-family: $brand-font;
-    font-size: 1.5em;
-    float: left;
-    margin-right: 30px;
-  }
-}
-
-.alignright {
-  float:right;
-}
-
-.darktext {
-  font-size:1.1em;
-  font-weight: 400;
-  color: $brand-black;
-}
-
-#titel {
-  width: 60%;
-  float: left;
-}
-
-
-#fasen {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15%;
-  margin-bottom: 4%;
-}
-
-
-
-
-
 
 
 h2 {
@@ -121,13 +34,6 @@ h2 {
   margin-top: 0;
 }
 
-.subtitle {
-  font-weight: 100;
-  color: $brand-gray-dark;
-  font-size: 1.1em;
-  display: inline-block;
-  margin-top: 10px;
-}
 
 .comment {
   padding: 6vh 5vw;

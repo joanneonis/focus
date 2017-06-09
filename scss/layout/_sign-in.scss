@@ -1,0 +1,45 @@
+
+#inloggen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  #logocontainer {
+    float: left;
+    margin-right: 5.5vw;
+    margin-top: -2.1em;
+
+    .logo {
+      width: 23vw;
+    }
+  }
+
+  #inlogformulier {
+    float: left;
+    
+    input {
+      width: 100%;
+    }
+  }
+
+  .btn{
+      float: right;
+  }
+}
+
+#wwvergetenform {
+  margin-bottom: 4%;
+}
+
+#inlog-links {
+  bottom: 5vw;
+  right: 5vw;
+  position: absolute;
+}
+
+
+#inlogform{
+    width: 35vw;
+}

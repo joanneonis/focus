@@ -79,6 +79,9 @@ strong {
     background: none;
     color: #4991FF; }
 
+.clear {
+  clear: both; }
+
 .cards {
   padding: 0;
   margin: 0; }

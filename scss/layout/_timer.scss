@@ -22,22 +22,6 @@
         max-width: 140vw;
         max-height: 140vh;
         @include centralize();
-
-        #ring1 {
-            transform: rotate(0deg);
-            transform-origin: center;
-            -webkit-animation: rotate 40s linear infinite;
-        }
-        #ring2{
-            @extend #ring1;
-            -webkit-animation: rotate-left 40s linear infinite;
-            transform-origin: 52.4% 48.4%;
-            animation-delay: -.3s;
-        }
-        #ring3{
-            @extend #ring1;
-            animation-delay: -.6s;
-        }
     }
 
     h1{

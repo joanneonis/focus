@@ -18,6 +18,11 @@ var currentDeltaX = start;
 var adjustDeltaX = start;
 
 sliderdot.style.left = currentDeltaX+"px";
+sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';
+
+$( window ).resize(function() {
+  sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';
+});
 
 var faseAfsprong = [offsetLeft,$('section.afsprong')];
 var faseVluchtfase1 = [timelineLength/4*1+offsetLeft, $('section.vluchtfase1')];
@@ -137,8 +142,20 @@ function str_pad_left(string,pad,length) {
       return (new Array(length+1).join(pad)+string).slice(-length);
     }
 
+// mc.on("panleft", function(ev){
+//   if((ev.target.offsetLeft + 26) + ev.deltaX < start){
+//     mc.stop();
+//   }
+// });
+
 mc.on("panleft panright", function(ev) {
+
   currentDeltaX = adjustDeltaX + ev.deltaX;
+
+  // if(ev.target.offsetLeft + (ev.target.clientWidth / 2) <= start && ev.direction == Hammer.DIRECTION_LEFT){
+  //   console.log(ev.target.offsetLeft + (ev.target.outerWidth / 2), start);
+  //   return;
+  // }
 
   var firstStop = 0.032*timelineWidth;
 

@@ -90,7 +90,7 @@ strong {
     box-shadow: 0px 0px 2vw rgba(0, 0, 0, 0.07);
     display: block;
     padding: 5% 8%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     border-radius: 0.4vw; }
     .cards .card-chart {
       padding: 45px;
@@ -146,7 +146,7 @@ strong {
     margin: auto; }
 
 .page-title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   position: relative;
   float: left; }
   .page-title .btn {
@@ -158,6 +158,17 @@ strong {
     font-size: 1.1em;
     display: inline-block;
     margin-top: 10px; }
+
+svg.animate #ring1, svg.animate #ring2, svg.animate #ring3 {
+  transform: rotate(0deg);
+  transform-origin: center;
+  -webkit-animation: rotate 30s linear infinite; }
+svg.animate #ring2 {
+  -webkit-animation: rotate-left 40s linear infinite;
+  transform-origin: 52.4% 48.4%;
+  animation-delay: .3s; }
+svg.animate #ring3 {
+  animation-delay: .6s; }
 
 .timeline {
   background: #ccc;
@@ -174,7 +185,6 @@ strong {
     border-radius: 50px;
     width: 50px;
     height: 50px;
-    bottom: 35px;
     left: 0px;
     z-index: 10;
     cursor: pointer;
@@ -264,13 +274,15 @@ section.comment {
   justify-content: space-around;
   text-align: center; }
   .algemeen .cards .card {
-    width: 45%; }
+    width: 45%;
+    margin-bottom: 5%; }
     .algemeen .cards .card img {
       margin-top: -20px;
       max-height: 15vh;
       max-width: 100%; }
 
 .stripes, .stripes:before, .stripes:after {
+  pointer-events: none;
   height: 22px;
   width: 2px;
   background: #686868;
@@ -308,6 +320,8 @@ section.comment {
 
 .dashboard-inner {
   clear: both; }
+  .dashboard-inner .btn {
+    float: right; }
 
 #page-container {
   padding: 5% 7%; }
@@ -358,16 +372,6 @@ section.comment {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
-    .timer-container svg #ring1, .timer-container svg #ring2, .timer-container svg #ring3 {
-      transform: rotate(0deg);
-      transform-origin: center;
-      -webkit-animation: rotate 40s linear infinite; }
-    .timer-container svg #ring2 {
-      -webkit-animation: rotate-left 40s linear infinite;
-      transform-origin: 52.4% 48.4%;
-      animation-delay: -.3s; }
-    .timer-container svg #ring3 {
-      animation-delay: -.6s; }
   .timer-container h1 {
     font-size: 8vmax;
     position: absolute;
@@ -387,6 +391,8 @@ section.comment {
   width: 100%;
   text-align: center;
   margin: 50px 0; }
+  #fasen .btn {
+    margin-top: 30px; }
 
 .circleholder {
   margin-right: 2%;
@@ -418,7 +424,7 @@ section.comment {
     float: left;
     margin-right: 5.5vw;
     margin-top: -2.1em; }
-    #inloggen #logocontainer .logo {
+    #inloggen #logocontainer svg {
       width: 23vw; }
   #inloggen #inlogformulier {
     float: left; }

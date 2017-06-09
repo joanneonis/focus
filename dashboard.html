@@ -14,43 +14,64 @@
 <body>
 
 
-    <div id="wrapper">
-        <div id="titel">
+    <div id="page-container">
+        <div id="page-title">
             <h2>Dashboard</h2>
-            <span class="subtitle">Tekst</span>
         </div>
 
-        <div id="profielicoon">
-                <div class="naamholder">
-                    <span class="darktext">Ranomi Kromowidjojo</span><br>
-                    <a href="index.html" class="small">Uitloggen</a>
-                </div>
-                <div class="iconholder">
-                    <img src="assets/img/ranomi.png" class="icon">
-                </div>
+        <div class="user-profile">
+            <div class="user-name">
+                <span class="darktext">Ranomi Kromowidjojo</span><br>
+                <a href="index.html" class="small">Uitloggen</a>
             </div>
+            <div class="user-image">
+                <img src="assets/img/ranomi.png" class="icon">
+            </div>
+        </div>
         <div class="dashboard-inner">
             <div class="score-container">
+                <h4>Toptijden</h4>
                 <ul class="cards">
                     <li class="card">
-                        Wisselslag
+                        <span class="card-time">20:02</span>
+                        <span class="card-text">
+                            wisselslag
+                            <time datetime="">12 jan 2016</time>
+                        </span>
+                    </li>
+                   <li class="card">
+                        <span class="card-time">20:02</span>
+                        <span class="card-text">
+                            wisselslag
+                            <time datetime="">12 jan 2016</time>
+                        </span>
                     </li>
                     <li class="card">
-                        Borstcrawl
+                        <span class="card-time">20:02</span>
+                        <span class="card-text">
+                            wisselslag
+                            <time datetime="">12 jan 2016</time>
+                        </span>
                     </li>
                     <li class="card">
-                        Rugslag
+                        <span class="card-time">20:02</span>
+                        <span class="card-text">
+                            wisselslag
+                            <time datetime="">12 jan 2016</time>
+                        </span>
                     </li>
                     <li class="card">
-                        Rugslag
-                    </li>
-                    <li class="card">
-                        Rugslag
+                        <span class="card-time">20:02</span>
+                        <span class="card-text">
+                            wisselslag
+                            <time datetime="">12 jan 2016</time>
+                        </span>
                     </li>
                 </ul>
             </div>
             <div class="chart-container cards">
-                <div class="card">
+                <h4>Toptijden</h4>
+                <div class="card card-chart">
                     <canvas id="Chart"></canvas>
                 </div>
             </div>

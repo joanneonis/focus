@@ -110,3 +110,37 @@ section.comment {
     }
   }
 }
+
+
+.stripes {
+  height: 22px;
+  width: 2px;
+  background: $brand-gray-dark;
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  &:before {
+    content: "";
+    @extend .stripes;
+    top: 0;
+    left: 8px;
+  }
+  &:after {
+    content: "";
+    @extend .stripes;
+    top: 0;
+    left: 16px;
+  }
+}
+
+.hand1,
+.hand2,
+.enkel1,
+.enkel2,
+.middel1,
+.middel2,
+.knie1,
+.knie2 {
+  opacity: 0;
+  transition: all .2s;
+}

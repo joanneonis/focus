@@ -56,10 +56,6 @@
   &-centered {
     margin: 0 auto;
   }
-  &-bigger {
-    width: 60px;
-    height: 60px;
-  }
 
   &-backcircle {
     width: 50px;
@@ -70,28 +66,3 @@
   }
 }
 
-.cirkel {
-  background: white;
-  border-radius: 200px;
-  display: inline-block;
-  padding: 7px 12px;
-  border: 2px solid $brand-secondary;
-  width: 16.6vw;
-  height: 16.6vw;
-  line-height: 16.6vw;
-  text-align: center;
-  margin-right: 2%;
-  margin-bottom: 10%;
-  float: left;
-  &-filled {
-    background: #f2f8ff;
-  }
-  .faseicoon {
-    width: 90%;
-    max-height: 100%;
-    display: inline-block;
-    &-first {
-      padding: 8%;
-    }
-  }
-}

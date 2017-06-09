@@ -4,9 +4,11 @@
 @import "components/btn";
 @import "components/type";
 @import "components/cards";
+@import "components/tooltip";
 @import "layout/timeline";
 @import "layout/dashboard";
 @import "layout/timer";
+@import "layout/fase";
 
 body {
   font-family: $brand-font;
@@ -18,11 +20,6 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-a.small {
-  color: $brand-gray-darker;
-  font-size:0.8em;
 }
 
 #container {
@@ -78,18 +75,6 @@ a.small {
   }
 }
 
-.naamholder, .iconholder {
-  float:right;
-}
-
-.iconholder{
-  margin-right:3%;
-}
-
-.icon {
-  width:20%;
-}
-
 .darktext {
   font-size:1.1em;
   font-weight: 400;
@@ -101,13 +86,6 @@ a.small {
   float: left;
 }
 
-#profielicoon {
-  width: 40%;
-  height: 100px;
-  text-align: right;
-  float: right;
-  clear: right;
-}
 
 #fasen {
   display: flex;
@@ -119,46 +97,9 @@ a.small {
 
 
 
-.circleholder {
-  margin-right: 2%;
-  &-last {
-    margin-right: 0;
-  }
-}
 
 
-.stripes {
-  height: 22px;
-  width: 2px;
-  background: $brand-gray-dark;
-  position: absolute;
-  left: 16px;
-  top: 14px;
-  &:before {
-    content: "";
-    @extend .stripes;
-    top: 0;
-    left: 8px;
-  }
-  &:after {
-    content: "";
-    @extend .stripes;
-    top: 0;
-    left: 16px;
-  }
-}
 
-.hand1,
-.hand2,
-.enkel1,
-.enkel2,
-.middel1,
-.middel2,
-.knie1,
-.knie2 {
-  opacity: 0;
-  transition: all .2s;
-}
 
 h2 {
   font-weight: 100;
@@ -282,40 +223,7 @@ textarea {
     left: 5vw;
 }
 
-@-webkit-keyframes wiggle{
-  0%{transform: rotate(3deg);}
-  50%{transform: rotate(-7deg);}
-  100%{transform: rotate(3deg);}
-}
 
-.tooltip {
-    position: absolute;
-    margin-top: -55px;
-    background: rgba(0, 0, 0, 0.51);
-    color: white;
-    font-weight: 600;
-    padding: 10px;
-    width: 90px;
-    border-radius: 5px;
-    left: -20px;
-    transform-origin: center 150%;
-    -webkit-animation: wiggle .8s ease-in-out infinite;
-    transition: opacity .2s;
-
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-left: 8px solid rgba(0, 0, 0, 0);
-      border-right: 8px solid rgba(0, 0, 0, 0);
-      border-top: 12px solid rgba(0, 0, 0, 0.51);
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      right: 0;
-      margin: auto;
-  }
-}
 
     
 .btn-group{

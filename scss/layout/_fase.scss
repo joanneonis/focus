@@ -1,0 +1,40 @@
+
+
+.cirkel-filled{
+    .body-fill *, 
+    &#fase_alles .body-fill{
+        fill: $brand-primary!important;
+    }
+
+    .body-line * {
+        stroke:  $brand-primary!important;
+    }
+}
+
+
+.circleholder {
+  margin-right: 2%;
+  &-last {
+    margin-right: 0;
+  }
+}
+
+.cirkel {
+  background: white;
+  border-radius: 200px;
+  display: inline-block;
+  transition: all .2s;
+  padding: 7px 12px;
+  border: 2px solid $brand-secondary;
+  width: 16.6vw;
+  height: 16.6vw;
+  line-height: 16.6vw;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 10%;
+  float: left;
+
+  &-filled {
+    background: #f2f8ff;
+  }
+}

@@ -38,37 +38,12 @@
     display: block; }
   .btn-centered {
     margin: 0 auto; }
-  .btn-bigger {
-    width: 60px;
-    height: 60px; }
   .btn-backcircle {
     width: 50px;
     height: 50px;
     margin-right: 1%;
     text-align: center;
     display: inline; }
-
-.cirkel {
-  background: white;
-  border-radius: 200px;
-  display: inline-block;
-  padding: 7px 12px;
-  border: 2px solid #D8E9FF;
-  width: 16.6vw;
-  height: 16.6vw;
-  line-height: 16.6vw;
-  text-align: center;
-  margin-right: 2%;
-  margin-bottom: 10%;
-  float: left; }
-  .cirkel-filled {
-    background: #f2f8ff; }
-  .cirkel .faseicoon {
-    width: 90%;
-    max-height: 100%;
-    display: inline-block; }
-    .cirkel .faseicoon-first {
-      padding: 8%; }
 
 ::selection {
   background: none; }
@@ -82,6 +57,11 @@ h3 {
   color: #4991FF;
   font-size: 1.6em;
   font-weight: 300; }
+
+h4 {
+  color: #686868;
+  font-weight: 500;
+  margin-bottom: 15px; }
 
 strong {
   font-size: 1.7em;
@@ -114,6 +94,58 @@ strong {
     padding: 5% 8%;
     margin-bottom: 5%;
     border-radius: 0.4vw; }
+    .cards .card-chart {
+      padding: 45px;
+      height: 55vh; }
+    .cards .card-time {
+      color: #4991ff;
+      font-weight: 500;
+      font-size: 2em;
+      display: block;
+      margin-right: 20px;
+      float: left; }
+    .cards .card-text {
+      display: inline-block;
+      font-weight: 400;
+      line-height: 1.4; }
+      .cards .card-text time {
+        clear: both;
+        display: block;
+        font-size: 12px;
+        font-weight: 100; }
+
+@-webkit-keyframes wiggle {
+  0% {
+    transform: rotate(3deg); }
+  50% {
+    transform: rotate(-7deg); }
+  100% {
+    transform: rotate(3deg); } }
+.tooltip {
+  position: absolute;
+  margin-top: -55px;
+  background: rgba(0, 0, 0, 0.51);
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  width: 90px;
+  border-radius: 5px;
+  left: -20px;
+  transform-origin: center 150%;
+  -webkit-animation: wiggle .8s ease-in-out infinite;
+  transition: opacity .2s; }
+  .tooltip:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid rgba(0, 0, 0, 0.51);
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    margin: auto; }
 
 .timeline {
   background: #ccc;
@@ -226,17 +258,72 @@ section.comment {
       max-height: 15vh;
       max-width: 100%; }
 
+.stripes, .stripes:before, .stripes:after {
+  height: 22px;
+  width: 2px;
+  background: #686868;
+  position: absolute;
+  left: 16px;
+  top: 14px; }
+  .stripes:before {
+    content: "";
+    top: 0;
+    left: 8px; }
+  .stripes:after {
+    content: "";
+    top: 0;
+    left: 16px; }
+
+.hand1,
+.hand2,
+.enkel1,
+.enkel2,
+.middel1,
+.middel2,
+.knie1,
+.knie2 {
+  opacity: 0;
+  transition: all .2s; }
+
 .chart-container {
   width: 70%;
   float: left; }
 
 .score-container {
-  width: 24%;
-  margin-right: 6%;
+  width: 26%;
+  margin-right: 4%;
   float: left; }
 
 .dashboard-inner {
   clear: both; }
+
+#page-container {
+  padding: 5% 7%; }
+
+.user-profile {
+  display: flex;
+  float: right;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center; }
+
+.user-name {
+  float: left;
+  text-align: right;
+  margin-right: 20px; }
+  .user-name a {
+    color: #686868;
+    font-size: 0.8em; }
+
+.user-image {
+  float: left;
+  max-width: 65px; }
+  .user-image img {
+    max-width: 100%; }
+
+#page-title {
+  float: left; }
 
 @-webkit-keyframes rotate {
   0% {
@@ -275,6 +362,33 @@ section.comment {
     font-weight: 500;
     margin: -10px 0 0 0; }
 
+.cirkel-filled .body-fill *, .cirkel-filled#fase_alles .body-fill {
+  fill: #4991FF !important; }
+.cirkel-filled .body-line * {
+  stroke: #4991FF !important; }
+
+.circleholder {
+  margin-right: 2%; }
+  .circleholder-last {
+    margin-right: 0; }
+
+.cirkel {
+  background: white;
+  border-radius: 200px;
+  display: inline-block;
+  transition: all .2s;
+  padding: 7px 12px;
+  border: 2px solid #D8E9FF;
+  width: 16.6vw;
+  height: 16.6vw;
+  line-height: 16.6vw;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 10%;
+  float: left; }
+  .cirkel-filled {
+    background: #f2f8ff; }
+
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -284,10 +398,6 @@ body {
 
 * {
   box-sizing: border-box; }
-
-a.small {
-  color: #53556F;
-  font-size: 0.8em; }
 
 #container {
   position: relative;
@@ -330,15 +440,6 @@ a.small {
     width: 140%;
     margin: 0 -10px; }
 
-.naamholder, .iconholder {
-  float: right; }
-
-.iconholder {
-  margin-right: 3%; }
-
-.icon {
-  width: 20%; }
-
 .darktext {
   font-size: 1.1em;
   font-weight: 400;
@@ -348,51 +449,12 @@ a.small {
   width: 60%;
   float: left; }
 
-#profielicoon {
-  width: 40%;
-  height: 100px;
-  text-align: right;
-  float: right;
-  clear: right; }
-
 #fasen {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 15%;
   margin-bottom: 4%; }
-
-.circleholder {
-  margin-right: 2%; }
-  .circleholder-last {
-    margin-right: 0; }
-
-.stripes, .stripes:before, .stripes:after {
-  height: 22px;
-  width: 2px;
-  background: #686868;
-  position: absolute;
-  left: 16px;
-  top: 14px; }
-  .stripes:before {
-    content: "";
-    top: 0;
-    left: 8px; }
-  .stripes:after {
-    content: "";
-    top: 0;
-    left: 16px; }
-
-.hand1,
-.hand2,
-.enkel1,
-.enkel2,
-.middel1,
-.middel2,
-.knie1,
-.knie2 {
-  opacity: 0;
-  transition: all .2s; }
 
 h2 {
   font-weight: 100;
@@ -489,39 +551,6 @@ textarea {
   position: fixed;
   top: 6vh;
   left: 5vw; }
-
-@-webkit-keyframes wiggle {
-  0% {
-    transform: rotate(3deg); }
-  50% {
-    transform: rotate(-7deg); }
-  100% {
-    transform: rotate(3deg); } }
-.tooltip {
-  position: absolute;
-  margin-top: -55px;
-  background: rgba(0, 0, 0, 0.51);
-  color: white;
-  font-weight: 600;
-  padding: 10px;
-  width: 90px;
-  border-radius: 5px;
-  left: -20px;
-  transform-origin: center 150%;
-  -webkit-animation: wiggle .8s ease-in-out infinite;
-  transition: opacity .2s; }
-  .tooltip:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 12px solid rgba(0, 0, 0, 0.51);
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    right: 0;
-    margin: auto; }
 
 .btn-group {
   float: right;

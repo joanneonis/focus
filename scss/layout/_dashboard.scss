@@ -2,16 +2,50 @@
 .chart-container {
     width: 70%;
     float: left;
-
-    
 }
 
 .score-container{
-    width: 24%;
-    margin-right: 6%;
+    width: 26%;
+    margin-right: 4%;
     float: left;
 }
 
 .dashboard-inner{
     clear: both;
+}
+
+#page-container {
+    padding: 5% 7%;
+}
+
+.user-profile {
+    display: flex;
+    float: right;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.user-name {
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+
+    a{
+        color: $brand-gray-dark;
+        font-size: 0.8em;
+    }
+}
+
+.user-image {
+    float: left;
+    max-width: 65px;
+    img {
+        max-width: 100%;
+    }
+}
+
+#page-title {
+    float: left;
 }

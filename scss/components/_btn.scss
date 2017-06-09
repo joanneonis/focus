@@ -53,10 +53,24 @@
     margin: 0 35%;
     display: block;
   }
+  &-rounded {
+    //width: 50px;
+    height: 50px; 
+    text-align: center;
+    //margin: 0 35%;
+    display: block;
+  }
   &-centered {
     margin: 0 auto;
   }
+<<<<<<< HEAD
 
+=======
+  &-bigger {
+    width: 60px;
+    height: 60px;
+  }
+>>>>>>> ab85e79f524cb93e3719d37ef88b57bcdcad7c2e
   &-backcircle {
     width: 50px;
     height: 50px; 

@@ -36,6 +36,10 @@
     text-align: center;
     margin: 0 35%;
     display: block; }
+  .btn-rounded {
+    height: 50px;
+    text-align: center;
+    display: block; }
   .btn-centered {
     margin: 0 auto; }
   .btn-backcircle {
@@ -434,11 +438,19 @@ body {
   position: absolute; }
 
 .arrow {
-  width: 200%;
+  width: 13px;
   margin: 0 -2px; }
   .arrow-back {
     width: 140%;
     margin: 0 -10px; }
+  .arrow-text {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5em;
+    float: left;
+    margin-right: 30px; }
+
+.alignright {
+  float: right; }
 
 .darktext {
   font-size: 1.1em;
@@ -507,7 +519,8 @@ label {
   margin: 10px 5px;
   text-align: left;
   color: #4991FF;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 0.95em;
   display: inline-block;
   width: 100%; }
 

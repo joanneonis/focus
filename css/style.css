@@ -190,7 +190,11 @@ svg.animate #ring3 {
     cursor: pointer;
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-    margin-left: -25px; }
+    margin-left: -25px;
+    bottom: 1vw; }
+    @media (min-width: 1000px) {
+      .timeline #sliderdot {
+        bottom: 1.7vw; } }
 
 section.algemeen,
 section.afsprong,
@@ -308,6 +312,9 @@ section.comment {
 .knie2 {
   opacity: 0;
   transition: all .2s; }
+
+#timeline-svg {
+  width: 100%; }
 
 .chart-container {
   width: 70%;

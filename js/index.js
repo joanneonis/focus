@@ -18,11 +18,11 @@ var currentDeltaX = start;
 var adjustDeltaX = start;
 
 sliderdot.style.left = currentDeltaX+"px";
-sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';
+// sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';
 
-$( window ).resize(function() {
-  sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';
-});
+// $( window ).resize(function() {
+//   sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';
+// });
 
 var faseAfsprong = [offsetLeft,$('section.afsprong')];
 var faseVluchtfase1 = [timelineLength/4*1+offsetLeft, $('section.vluchtfase1')];

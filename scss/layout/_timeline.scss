@@ -18,13 +18,17 @@
     border-radius: 50px;
     width: 50px;
     height: 50px;
-   // bottom: 35px;
     left: 0px;
     z-index: 10;
     cursor: pointer;
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
     margin-left: -25px;
+    bottom: 1vw;
+
+    @media (min-width:1000px){
+        bottom: 1.7vw;
+    }
   }
 }
 
@@ -145,4 +149,8 @@ section.comment {
 .knie2 {
   opacity: 0;
   transition: all .2s;
+}
+
+#timeline-svg{
+  width: 100%;
 }

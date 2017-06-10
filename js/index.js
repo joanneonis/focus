@@ -1,11 +1,13 @@
+
+
 var sliderdot = document.getElementById('sliderdot');
 var basis = $('.algemeen');
 var timelineWidth = $('#timeline-line').attr('width'); //$('#timeline-svg').outerWidth() 
 var timelineRelative = timelineWidth/200;
 var mc = new Hammer(sliderdot);
 
-var offsetLeft = $('#timeline-line').position().left;
-var timelineLength = ($('#timeline-line').outerWidth());
+var offsetLeft = $('.timeline-line').position().left;
+var timelineLength = ($('.timeline-line').outerWidth());
 
 var start = $('#timeline-start').position().left;
 
@@ -14,8 +16,8 @@ var timelineSVGwidth = 963;
 
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
-var currentDeltaX = start;
-var adjustDeltaX = start;
+var currentDeltaX = offsetLeft;
+var adjustDeltaX = offsetLeft;
 
 sliderdot.style.left = currentDeltaX+"px";
 // sliderdot.style.top = ($('#timeline-line').position().top - 25)+'px';

@@ -40,7 +40,7 @@ section.comment {
   top: 0;
   bottom: 0;
   svg {
-    max-height: calc(100vh - 9vw);
+    max-height: calc(100vh - 9vw - 100px);
     max-width: 99vw;
     position: absolute;
     left: 50%;

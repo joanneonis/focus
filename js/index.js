@@ -247,7 +247,10 @@ video2.bind("ended", function() {
 
 $('.afsprong-01 .replay').click(function(){
     video[0].play();
+    $('.afsprong-01 .replay').hide();
 });
 $('.afsprong-02 .replay').click(function(){
     video2[0].play();
+    $('.afsprong-02 .replay').hide();
 });
+

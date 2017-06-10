@@ -178,7 +178,8 @@ svg.animate #ring3 {
   bottom: 0;
   height: 9vw;
   padding: 0px 70px;
-  background-color: #D8E9FF; }
+  background-color: #D8E9FF;
+  z-index: 2; }
   .timeline #sliderdot {
     position: fixed;
     background: white;
@@ -197,6 +198,8 @@ svg.animate #ring3 {
         bottom: 1.7vw; } }
 
 section.algemeen,
+section.afsprong-01,
+section.afsprong-02,
 section.afsprong,
 section.keerpunt,
 section.vluchtfase1,
@@ -206,8 +209,11 @@ section.comment {
   position: absolute;
   width: 100%;
   top: 0;
-  bottom: 0; }
+  bottom: 0;
+  pointer-events: none; }
   section.algemeen svg,
+  section.afsprong-01 svg,
+  section.afsprong-02 svg,
   section.afsprong svg,
   section.keerpunt svg,
   section.vluchtfase1 svg,
@@ -220,14 +226,21 @@ section.comment {
     top: 50%;
     transform: translate(-50%, -50%); }
   section.algemeen.active,
+  section.afsprong-01.active,
+  section.afsprong-02.active,
   section.afsprong.active,
   section.keerpunt.active,
   section.vluchtfase1.active,
   section.vluchtfase2.active,
   section.comment.active {
-    opacity: 1; }
+    opacity: 1;
+    pointer-events: auto; }
     section.algemeen.active circle,
     section.algemeen.active text,
+    section.afsprong-01.active circle,
+    section.afsprong-01.active text,
+    section.afsprong-02.active circle,
+    section.afsprong-02.active text,
     section.afsprong.active circle,
     section.afsprong.active text,
     section.keerpunt.active circle,
@@ -312,6 +325,27 @@ section.comment {
 .knie2 {
   opacity: 0;
   transition: all .2s; }
+
+video {
+  width: 100%;
+  height: 100%; }
+
+.afsprong-01, .afsprong-02 {
+  background: #000; }
+
+.replay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 100px;
+  left: 0;
+  right: 0; }
+  .replay .btn {
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
 
 .chart-container {
   width: 70%;

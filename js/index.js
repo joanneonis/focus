@@ -11,6 +11,8 @@ var timelineLength = ($('.timeline-line').outerWidth());
 
 var start = $('#timeline-start').position().left;
 
+var video = $('#video1');
+var video2 = $('#video2');
 
 var timelineSVGwidth = 963;
 
@@ -177,11 +179,29 @@ mc.on("panleft panright", function(ev) {
      }else{
        basis.removeClass('active');
      }
-  if(currentDeltaX > faseAfsprong[0] && currentDeltaX < faseVluchtfase1[0]){
+
+     if(currentDeltaX > faseAfsprong[0] && currentDeltaX < (faseVluchtfase1[0]/3*1)){
+     $('.afsprong-01').addClass('active');
+     video[0].play();
+     }else{
+       $('.afsprong-01').removeClass('active');
+       video[0].pause();
+     }
+
+ if(currentDeltaX > (faseVluchtfase1[0]/3*1) && currentDeltaX < (faseVluchtfase1[0]/3*2)){
+     $('.afsprong-02').addClass('active');
+     video2[0].play();
+     }else{
+       $('.afsprong-02').removeClass('active');
+       video2[0].pause();
+     }
+
+     if(currentDeltaX > (faseVluchtfase1[0]/3*2) && currentDeltaX < faseVluchtfase1[0]){
      faseAfsprong[1].addClass('active');
      }else{
        faseAfsprong[1].removeClass('active');
      }
+
   if(currentDeltaX >= faseVluchtfase1[0] && currentDeltaX < faseKeerpunt[0]){
      faseVluchtfase1[1].addClass('active');
      }else{
@@ -214,4 +234,20 @@ mc.on("panleft panright", function(ev) {
 
 mc.on("panend", function(ev){
     adjustDeltaX = currentDeltaX;
+});
+
+
+  
+video.bind("ended", function() {
+      $('.afsprong-01 .replay').show();
+});
+video2.bind("ended", function() {
+      $('.afsprong-02 .replay').show();
+});
+
+$('.afsprong-01 .replay').click(function(){
+    video[0].play();
+});
+$('.afsprong-02 .replay').click(function(){
+    video2[0].play();
 });
